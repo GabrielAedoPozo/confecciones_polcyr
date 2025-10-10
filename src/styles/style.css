@@ -687,6 +687,132 @@
   padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
+/* Estilos para el header con botón de idioma */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(6, 73, 167, 0.1);
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.brand img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--brand-blue);
+  background: rgba(6, 73, 167, 0.05);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(6, 73, 167, 0.1);
+  border: 1px solid rgba(6, 73, 167, 0.2);
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.language-toggle:hover {
+  background: rgba(6, 73, 167, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(6, 73, 167, 0.2);
+}
+
+.lang-flag {
+  font-size: 1.2rem;
+}
+
+.lang-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsive header */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .language-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .lang-flag {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand img {
+    height: 50px;
+  }
+
+  .language-toggle {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .lang-text {
+    display: none;
+  }
+}
+
 /* Responsive Global */
 * {
   box-sizing: border-box;
