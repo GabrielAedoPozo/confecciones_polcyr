@@ -1,46 +1,51 @@
-# Astro Starter Kit: Basics
+# 👕 Confecciones Polcyr
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+**Confecciones Polcyr** es una **marca internacional con más de 20 años de experiencia** en la industria textil, dedicada a ofrecer productos de alta calidad con diseños modernos y exclusivos.  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El sitio web oficial fue desarrollado utilizando **Astro**, **JavaScript** y gestionado con **pnpm**, priorizando el rendimiento, la velocidad y una experiencia visual limpia, moderna y profesional.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Tecnologías utilizadas
 
-```text
+- 🧩 **Astro** → Framework moderno para crear sitios web rápidos, estáticos y optimizados.  
+- 💛 **JavaScript (Vanilla)** → Para la lógica e interactividad del sitio.  
+- 📦 **pnpm** → Gestor de paquetes rápido y eficiente, utilizado para instalar dependencias y manejar scripts.
+
+---
+
+## 🧱 Estructura del proyecto
+
+```bash
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/              # Archivos públicos (imágenes, íconos, etc.)
+├── src/
+│   ├── components/      # Componentes reutilizables (botones, headers, sliders, etc.)
+│   ├── layouts/         # Plantillas globales para las páginas
+│   ├── pages/           # Páginas principales del sitio (index.astro, nosotros.astro, etc.)
+│   ├── scripts/         # Archivos JavaScript para la funcionalidad
+│   └── styles/          # Archivos CSS globales o específicos
+├── package.json         # Configuración de dependencias y scripts
+└── astro.config.mjs     # Configuración de Astro
 ```
+##⚙️ Instalación y ejecución local
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+# 1. Clonar el repositorio
+git clone https://github.com/tuusuario/confecciones-polcyr.git
+bash
+Copiar código
+# 2. Entrar en la carpeta del proyecto
+cd confecciones-polcyr
+bash
+Copiar código
+# 3. Instalar dependencias
+pnpm install
+bash
+Copiar código
+# 4. Ejecutar el servidor de desarrollo
+pnpm run dev
 
-## 🧞 Commands
+#🌍 Sobre la marca
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Confecciones Polcyr es una empresa textil reconocida internacionalmente por su compromiso con la calidad, la innovación y la moda sostenible.
+Durante más de dos décadas, ha vestido a miles de personas en distintos países, manteniendo siempre su esencia: crear prendas con pasión, precisión y estilo.
