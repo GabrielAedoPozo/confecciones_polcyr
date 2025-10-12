@@ -1,0 +1,644 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+---
+
+<Layout title="Contacto - Confecciones POLCYR">
+	<Header />
+	
+	<main class="contact-page">
+		<!-- Hero Section -->
+		<section class="contact-hero">
+			<div class="contact-hero-container">
+				<div class="contact-hero-content">
+					<h1 data-es="Contáctanos" data-en="Contact Us">Contáctanos</h1>
+					<p data-es="Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos." data-en="We are here to help you with your textile projects. Contact us and discover how we can work together.">Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Information & Form -->
+		<section class="contact-content">
+			<div class="container">
+				<div class="contact-grid">
+					<!-- Contact Information -->
+					<div class="contact-info">
+						<h2 data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</h2>
+						
+						<div class="info-cards">
+							<div class="info-card">
+								<div class="info-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+									</svg>
+								</div>
+								<div class="info-content">
+									<h3 data-es="La Victoria" data-en="La Victoria">La Victoria</h3>
+									<p>PROLONG. HUANUCO NRO. 2642</p>
+									<p>La Victoria 15034, Lima - Perú</p>
+								</div>
+							</div>
+
+							<div class="info-card">
+								<div class="info-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+									</svg>
+								</div>
+								<div class="info-content">
+									<h3>San Juan de Lurigancho</h3>
+									<p>LOS EUCALIPTOS 361</p>
+								</div>
+							</div>
+
+							<div class="info-card">
+								<div class="info-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+									</svg>
+								</div>
+								<div class="info-content">
+									<h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
+									<p>(01) 3244754</p>
+								</div>
+							</div>
+
+							<div class="info-card">
+								<div class="info-icon">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+										<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+									</svg>
+								</div>
+								<div class="info-content">
+									<h3 data-es="Correo" data-en="Email">Correo</h3>
+									<p>polcyr@polcyrperu.com.pe</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Business Hours -->
+						<div class="business-hours">
+							<h3 data-es="Horarios de Atención" data-en="Business Hours">Horarios de Atención</h3>
+							<div class="hours-list">
+								<div class="hours-item">
+									<span data-es="Lunes - Viernes" data-en="Monday - Friday">Lunes - Viernes</span>
+									<span>9:00 AM - 6:00 PM</span>
+								</div>
+								<div class="hours-item">
+									<span data-es="Sábado" data-en="Saturday">Sábado</span>
+									<span>9:00 AM - 1:00 PM</span>
+								</div>
+								<div class="hours-item">
+									<span data-es="Domingo" data-en="Sunday">Domingo</span>
+									<span data-es="Cerrado" data-en="Closed">Cerrado</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Contact Form -->
+					<div class="contact-form">
+						<h2 data-es="Envíanos un Mensaje" data-en="Send us a Message">Envíanos un Mensaje</h2>
+						<form id="contactForm" class="form">
+							<div class="form-group">
+								<label for="name" data-es="Nombre completo" data-en="Full Name">Nombre completo</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+
+							<div class="form-row">
+								<div class="form-group">
+									<label for="email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+									<input type="email" id="email" name="email" required>
+								</div>
+								<div class="form-group">
+									<label for="phone" data-es="Teléfono" data-en="Phone">Teléfono</label>
+									<input type="tel" id="phone" name="phone">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="company" data-es="Empresa" data-en="Company">Empresa</label>
+								<input type="text" id="company" name="company">
+							</div>
+
+							<div class="form-group">
+								<label for="subject" data-es="Asunto" data-en="Subject">Asunto</label>
+								<select id="subject" name="subject" required>
+									<option value="" data-es="Seleccione un asunto" data-en="Select a subject">Seleccione un asunto</option>
+									<option value="cotizacion" data-es="Solicitar cotización" data-en="Request quote">Solicitar cotización</option>
+									<option value="informacion" data-es="Información sobre productos" data-en="Product information">Información sobre productos</option>
+									<option value="colaboracion" data-es="Oportunidades de colaboración" data-en="Collaboration opportunities">Oportunidades de colaboración</option>
+									<option value="otro" data-es="Otro" data-en="Other">Otro</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
+								<textarea id="message" name="message" rows="5" required placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+							</div>
+
+							<button type="submit" class="submit-btn" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Map Section -->
+		<section class="map-section">
+			<div class="container">
+				<h2 data-es="Encuéntranos" data-en="Find Us">Encuéntranos</h2>
+				<div class="map-container">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3547240879574!2d-77.0244!3d-12.0731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee79dd%3A0x14206cb9cc452e4a!2sJr.%20Hu%C3%A1nuco%202642%2C%20La%20Victoria%2015034!5e0!3m2!1ses!2spe!4v1703123456789!5m2!1ses!2spe"
+						width="100%"
+						height="400"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2 data-es="¿Listo para comenzar tu proyecto?" data-en="Ready to start your project?">¿Listo para comenzar tu proyecto?</h2>
+					<p data-es="Nuestro equipo está preparado para ayudarte a materializar tus ideas textiles con la más alta calidad." data-en="Our team is ready to help you materialize your textile ideas with the highest quality.">Nuestro equipo está preparado para ayudarte a materializar tus ideas textiles con la más alta calidad.</p>
+					<a href="tel:+5113244754" class="cta-button" data-es="Llamar Ahora" data-en="Call Now">Llamar Ahora</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<Footer />
+</Layout>
+
+<style>
+	:root {
+		--brand-blue: #0649a7;
+		--brand-blue-light: #1565d8;
+		--text-dark: #1e293b;
+		--text-gray: #475569;
+		--text-light: #64748b;
+		--bg-light: #f8fafc;
+		--border-light: #e2e8f0;
+		--success: #10b981;
+		--error: #ef4444;
+	}
+
+	.contact-page {
+		margin-top: 80px;
+	}
+
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	/* Hero Section */
+	.contact-hero {
+		padding: 5rem 2rem;
+		background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 100%);
+		color: white;
+		text-align: center;
+	}
+
+	.contact-hero-container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.contact-hero-content h1 {
+		font-size: clamp(3rem, 6vw, 4rem);
+		font-weight: 700;
+		margin: 0 0 2rem 0;
+		line-height: 1.1;
+	}
+
+	.contact-hero-content p {
+		font-size: 1.5rem;
+		line-height: 1.6;
+		margin: 0;
+		opacity: 0.95;
+	}
+
+	/* Contact Content */
+	.contact-content {
+		padding: 5rem 0;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+
+	/* Contact Info */
+	.contact-info h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--text-dark);
+		margin: 0 0 2rem 0;
+	}
+
+	.info-cards {
+		display: grid;
+		gap: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.info-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+		padding: 1.5rem;
+		background: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+		border-left: 4px solid var(--brand-blue);
+	}
+
+	.info-icon {
+		width: 50px;
+		height: 50px;
+		background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-light) 100%);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		flex-shrink: 0;
+	}
+
+	.info-content h3 {
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		margin: 0 0 0.5rem 0;
+	}
+
+	.info-content p {
+		color: var(--text-gray);
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	/* Business Hours */
+	.business-hours {
+		background: var(--bg-light);
+		padding: 2rem;
+		border-radius: 12px;
+	}
+
+	.business-hours h3 {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		margin: 0 0 1.5rem 0;
+	}
+
+	.hours-list {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.hours-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid var(--border-light);
+	}
+
+	.hours-item:last-child {
+		border-bottom: none;
+	}
+
+	.hours-item span:first-child {
+		font-weight: 500;
+		color: var(--text-dark);
+	}
+
+	.hours-item span:last-child {
+		color: var(--text-gray);
+	}
+
+	/* Contact Form */
+	.contact-form h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--text-dark);
+		margin: 0 0 2rem 0;
+	}
+
+	.form {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.form-group label {
+		font-weight: 500;
+		color: var(--text-dark);
+		font-size: 0.95rem;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		padding: 0.75rem;
+		border: 2px solid var(--border-light);
+		border-radius: 8px;
+		font-size: 1rem;
+		transition: border-color 0.3s ease;
+		background: white;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--brand-blue);
+		box-shadow: 0 0 0 3px rgba(6, 73, 167, 0.1);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	.submit-btn {
+		background: var(--brand-blue);
+		color: white;
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 8px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		justify-self: start;
+	}
+
+	.submit-btn:hover {
+		background: var(--brand-blue-light);
+		transform: translateY(-2px);
+		box-shadow: 0 8px 25px rgba(6, 73, 167, 0.3);
+	}
+
+	.submit-btn:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	/* Map Section */
+	.map-section {
+		padding: 5rem 0;
+		background: var(--bg-light);
+	}
+
+	.map-section h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--text-dark);
+		text-align: center;
+		margin: 0 0 3rem 0;
+	}
+
+	.map-container {
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+	}
+
+	/* CTA Section */
+	.cta-section {
+		padding: 5rem 0;
+		background: linear-gradient(135deg, var(--text-dark) 0%, #334155 100%);
+		color: white;
+	}
+
+	.cta-content {
+		text-align: center;
+	}
+
+	.cta-content h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+	}
+
+	.cta-content p {
+		font-size: 1.2rem;
+		margin: 0 0 2rem 0;
+		opacity: 0.9;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: var(--brand-blue);
+		color: white;
+		padding: 1rem 2.5rem;
+		border: none;
+		border-radius: 50px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 8px 25px rgba(6, 73, 167, 0.3);
+	}
+
+	.cta-button:hover {
+		background: var(--brand-blue-light);
+		transform: translateY(-2px);
+		box-shadow: 0 12px 35px rgba(6, 73, 167, 0.4);
+	}
+
+	/* Form States */
+	.form-success {
+		background: var(--success);
+		color: white;
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.form-error {
+		background: var(--error);
+		color: white;
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-hero {
+			padding: 3rem 1rem;
+		}
+
+		.contact-hero-content h1 {
+			font-size: 2.5rem;
+		}
+
+		.contact-hero-content p {
+			font-size: 1.2rem;
+		}
+
+		.container {
+			padding: 0 1rem;
+		}
+
+		.submit-btn {
+			justify-self: stretch;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.contact-hero-content h1 {
+			font-size: 2rem;
+		}
+
+		.contact-info h2,
+		.contact-form h2,
+		.map-section h2,
+		.cta-content h2 {
+			font-size: 1.8rem;
+		}
+
+		.info-card {
+			padding: 1rem;
+		}
+
+		.business-hours {
+			padding: 1.5rem;
+		}
+	}
+</style>
+
+<script is:inline>
+	// Traductor para la página de contacto
+	function translateContactPage() {
+		const language = localStorage.getItem('language') || 'es';
+		
+		document.querySelectorAll('[data-es]').forEach(element => {
+			const esText = element.getAttribute('data-es');
+			const enText = element.getAttribute('data-en');
+			
+			if (language === 'es' && esText) {
+				if (element.tagName === 'OPTION') {
+					element.textContent = esText;
+				} else if (element.hasAttribute('placeholder')) {
+					element.placeholder = esText;
+				} else {
+					element.textContent = esText;
+				}
+			} else if (language === 'en' && enText) {
+				if (element.tagName === 'OPTION') {
+					element.textContent = enText;
+				} else if (element.hasAttribute('placeholder')) {
+					element.placeholder = enText;
+				} else {
+					element.textContent = enText;
+				}
+			}
+		});
+	}
+
+	// Manejar el formulario de contacto
+	function initContactForm() {
+		const form = document.getElementById('contactForm');
+		if (!form) return;
+
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			
+			const submitBtn = form.querySelector('.submit-btn');
+			const originalText = submitBtn.textContent;
+			
+			// Estado de carga
+			submitBtn.disabled = true;
+			submitBtn.textContent = localStorage.getItem('language') === 'es' ? 'Enviando...' : 'Sending...';
+			
+			// Remover mensajes anteriores
+			const existingMessage = form.querySelector('.form-success, .form-error');
+			if (existingMessage) {
+				existingMessage.remove();
+			}
+			
+			try {
+				// Simular envío del formulario
+				await new Promise(resolve => setTimeout(resolve, 2000));
+				
+				// Mensaje de éxito
+				const successMessage = document.createElement('div');
+				successMessage.className = 'form-success';
+				successMessage.textContent = localStorage.getItem('language') === 'es' 
+					? 'Mensaje enviado correctamente. Te contactaremos pronto.'
+					: 'Message sent successfully. We will contact you soon.';
+				
+				form.insertBefore(successMessage, form.firstChild);
+				form.reset();
+				
+			} catch (error) {
+				// Mensaje de error
+				const errorMessage = document.createElement('div');
+				errorMessage.className = 'form-error';
+				errorMessage.textContent = localStorage.getItem('language') === 'es'
+					? 'Error al enviar el mensaje. Por favor, intenta nuevamente.'
+					: 'Error sending message. Please try again.';
+				
+				form.insertBefore(errorMessage, form.firstChild);
+			} finally {
+				// Restaurar botón
+				submitBtn.disabled = false;
+				submitBtn.textContent = originalText;
+			}
+		});
+	}
+
+	// Escuchar cambios de idioma
+	window.addEventListener('languageChanged', translateContactPage);
+
+	// Inicializar cuando el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			translateContactPage();
+			initContactForm();
+		});
+	} else {
+		translateContactPage();
+		initContactForm();
+	}
+</script>

@@ -1,41 +1,69 @@
-// Este archivo está vacío porque toda la lógica del slider
-// se movió inline al componente hero.astro para evitar problemas de SSR
-	sliders.forEach(slider => {
-		const track = slider.querySelector('[data-track]');
-		const slides = Array.from(track.children);
-		const nextBtn = slider.querySelector('[data-action="next"]');
-		const prevBtn = slider.querySelector('[data-action="prev"]');
-		const dotsContainer = slider.querySelector('[data-dots]');
-		let currentIndex = 0;
-		let interval;
+// Scripts adicionales para funcionalidades específicas
 
-		// Crear dots
-		slides.forEach((_, i) => {
-			const dot = document.createElement('button');
-			dot.className = 'dot';
-			if (i === 0) dot.classList.add('active');
-			dot.addEventListener('click', () => goToSlide(i));
-			dotsContainer.appendChild(dot);
-		});
-		const dots = Array.from(dotsContainer.children);
+// Intersection Observer para animaciones
+function initScrollAnimations() {
+  if (!window.IntersectionObserver) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
 
-        function goToSlide(i) {
-            const slideWidth = track.clientWidth; // ancho exacto del contenedor
-            currentIndex = i;
-            track.style.transform = `translateX(-${i * slideWidth}px)`; // en píxeles
-            dots.forEach(d => d.classList.remove('active'));
-            dots[i].classList.add('active');
-        }
+  // Observar elementos que necesitan animación
+  document.querySelectorAll('.tech-card, .why-card, .section-header').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+}
 
+// Mejorar el contador de estadísticas con animación
+function animateStats() {
+  const statNumber = document.querySelector('.stat-number');
+  if (!statNumber) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.textContent.replace(/[^\d]/g, ''));
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            clearInterval(timer);
+            current = target;
+          }
+          entry.target.textContent = Math.floor(current).toLocaleString() + '+';
+        }, 20);
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  
+  observer.observe(statNumber);
+}
 
-		nextBtn.addEventListener('click', () => { goToSlide((currentIndex+1)%slides.length); resetInterval(); });
-		prevBtn.addEventListener('click', () => { goToSlide((currentIndex-1+slides.length)%slides.length); resetInterval(); });
+// Inicializar funciones adicionales
+function initAdditionalFeatures() {
+  initScrollAnimations();
+  animateStats();
+}
 
-		function nextSlide() { goToSlide((currentIndex+1)%slides.length); }
-		function startInterval() { interval = setInterval(nextSlide, 4000); }
-		function resetInterval() { clearInterval(interval); startInterval(); }
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAdditionalFeatures);
+} else {
+  initAdditionalFeatures();
+}
 
-		startInterval();
-	});
-
-
+// Exportar para uso global
+window.AdditionalFeatures = {
+  initScrollAnimations,
+  animateStats
+};

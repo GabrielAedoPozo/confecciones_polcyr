@@ -11,11 +11,11 @@
 
 		<ul class="nav-menu">
 			<li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
-			<li><a href="#nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
+			<li><a href="/confecciones_polcyr/nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
 			<li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
 			<li><a href="#productos" data-es="Productos" data-en="Products">Productos</a></li>
 			<li><a href="#clientes" data-es="Clientes" data-en="Clients">Clientes</a></li>
-			<li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+			<li><a href="/confecciones_polcyr/contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
 		</ul>
 
 		<div class="header-actions">
@@ -143,191 +143,10 @@
 		.links .cta { width: 100%; text-align: center; }
 	}
 
-	/* Accesibilidad: helper para texto oculto visualmente */
-	.sr-only {
-		position: absolute;
-		width: 1px; height: 1px;
-		padding: 0; margin: -1px;
-		overflow: hidden; clip: rect(0,0,0,0);
-		white-space: nowrap; border: 0;
-	}
-
-	.site-header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background: rgba(255, 255, 255, 0.95);
-		backdrop-filter: blur(10px);
-		border-bottom: 1px solid rgba(6, 73, 167, 0.1);
-		z-index: 1000;
-		padding: 0.5rem 0;
-	}
-
-	.nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 1400px;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-
-	.brand img {
-		height: 60px;
-		width: auto;
-		transition: transform 0.3s ease;
-	}
-
-	.brand:hover img {
-		transform: scale(1.05);
-	}
-
-	.nav-menu {
-		display: flex;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		gap: 2rem;
-	}
-
-	.nav-menu a {
-		text-decoration: none;
-		color: #334155;
-		font-weight: 500;
-		font-size: 0.95rem;
-		padding: 0.5rem 1rem;
-		border-radius: 8px;
-		transition: all 0.3s ease;
-		position: relative;
-	}
-
-	.nav-menu a:hover {
-		color: var(--brand-blue);
-		background: rgba(6, 73, 167, 0.05);
-	}
-
-	.header-actions {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	.language-toggle {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		background: rgba(6, 73, 167, 0.1);
-		border: 1px solid rgba(6, 73, 167, 0.2);
-		border-radius: 25px;
-		padding: 0.5rem 1rem;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		font-size: 0.9rem;
-		font-weight: 600;
-		color: var(--brand-blue);
-	}
-
-	.language-toggle:hover {
-		background: rgba(6, 73, 167, 0.15);
-		transform: translateY(-1px);
-		box-shadow: 0 4px 12px rgba(6, 73, 167, 0.2);
-	}
-
-	.lang-flag {
-		font-size: 1.2rem;
-	}
-
-	.lang-text {
-		font-size: 0.85rem;
-		font-weight: 600;
-	}
-
-	.menu-toggle {
-		display: none;
-		background: none;
-		border: none;
-		font-size: 1.5rem;
-		color: var(--brand-blue);
-		cursor: pointer;
-		z-index: 1000;
-		position: relative;
-	}
-
-	/* Responsive */
-	@media (max-width: 768px) {
-		.nav {
-			padding: 0 1rem;
-		}
-
-		.nav-menu {
-			position: fixed;
-			top: 0;
-			left: -100%;
-			width: 80%;
-			height: 100vh;
-			background: white;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: flex-start;
-			padding: 4rem 2rem 2rem;
-			box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-			transition: left 0.3s ease;
-			z-index: 999;
-			gap: 0;
-		}
-
-		.nav-menu.active {
-			left: 0;
-		}
-
-		.nav-menu li {
-			width: 100%;
-		}
-
-		.nav-menu a {
-			font-size: 1.2rem;
-			padding: 1rem 0;
-			width: 100%;
-			border-bottom: 1px solid #e2e8f0;
-			border-radius: 0;
-		}
-
-		.menu-toggle {
-			display: block;
-		}
-
-		.header-actions {
-			gap: 0.5rem;
-		}
-
-		.language-toggle {
-			padding: 0.4rem 0.8rem;
-			font-size: 0.8rem;
-		}
-
-		.lang-flag {
-			font-size: 1rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.brand img {
-			height: 50px;
-		}
-
-		.language-toggle {
-			padding: 0.3rem 0.6rem;
-		}
-
-		.lang-text {
-			display: none;
-		}
-	}
 </style>
 
-<script>
-	// Sistema de traducción
+<script is:inline>
+	// Sistema de traducción inline para evitar problemas de carga
 	class LanguageManager {
 		constructor() {
 			this.currentLanguage = localStorage.getItem('language') || 'es';
@@ -339,67 +158,7 @@
 					'Servicios': 'Servicios',
 					'Productos': 'Productos',
 					'Clientes': 'Clientes',
-					'Contacto': 'Contacto',
-					// Hero
-					'Fabricación y exportación de prendas textiles de alta calidad': 'Fabricación y exportación de prendas textiles de alta calidad',
-					'En Confecciones POLCYR S.R.L. fabricamos prendas que integran diseño, confort y durabilidad. Con más de 20 años de experiencia, nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima reconocido mundialmente.': 'En Confecciones POLCYR S.R.L. fabricamos prendas que integran diseño, confort y durabilidad. Con más de 20 años de experiencia, nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima reconocido mundialmente.',
-					// About
-					'Sobre nosotros': 'Sobre nosotros',
-					'Más de 20 años fabricando prendas textiles de alta calidad': 'Más de 20 años fabricando prendas textiles de alta calidad',
-					'Confecciones POLCYR S.R.L. es una empresa peruana especializada en la fabricación y exportación de prendas textiles. Nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima, reconocido mundialmente por su suavidad y resistencia.': 'Confecciones POLCYR S.R.L. es una empresa peruana especializada en la fabricación y exportación de prendas textiles. Nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima, reconocido mundialmente por su suavidad y resistencia.',
-					'Prendas confeccionadas al mes': 'Prendas confeccionadas al mes',
-					'Procesos productivos sostenibles': 'Procesos productivos sostenibles',
-					'Flexibilidad en volúmenes y tiempos': 'Flexibilidad en volúmenes y tiempos',
-					'Algodón Pima peruano': 'Algodón Pima peruano',
-					'Control de calidad integral': 'Control de calidad integral',
-					'Atención personalizada': 'Atención personalizada',
-					'Más sobre nosotros': 'Más sobre nosotros',
-					// Technology
-					'Nuestra Tecnología': 'Nuestra Tecnología',
-					'Equipos de última generación para garantizar la máxima calidad en cada proceso productivo': 'Equipos de última generación para garantizar la máxima calidad en cada proceso productivo',
-					'Tejedora Industrial': 'Tejedora Industrial',
-					'Tecnología avanzada de tejido que permite crear tejidos uniformes y resistentes con diferentes tipos de fibras y patrones complejos.': 'Tecnología avanzada de tejido que permite crear tejidos uniformes y resistentes con diferentes tipos de fibras y patrones complejos.',
-					'Alta velocidad de producción': 'Alta velocidad de producción',
-					'Control de calidad automático': 'Control de calidad automático',
-					'Versatilidad en tipos de tejido': 'Versatilidad en tipos de tejido',
-					'Estampadora Digital': 'Estampadora Digital',
-					'Equipos de estampado digital de última generación que garantizan colores vibrantes y diseños precisos en cada prenda.': 'Equipos de estampado digital de última generación que garantizan colores vibrantes y diseños precisos en cada prenda.',
-					'Impresión de alta resolución': 'Impresión de alta resolución',
-					'Colores duraderos y brillantes': 'Colores duraderos y brillantes',
-					'Diseños personalizados': 'Diseños personalizados',
-					'Horno de Secado': 'Horno de Secado',
-					'Sistema de secado controlado que asegura el curado perfecto de tintes y acabados, manteniendo la integridad de las fibras.': 'Sistema de secado controlado que asegura el curado perfecto de tintes y acabados, manteniendo la integridad de las fibras.',
-					'Control de temperatura preciso': 'Control de temperatura preciso',
-					'Secado uniforme y eficiente': 'Secado uniforme y eficiente',
-					'Conservación de propiedades textiles': 'Conservación de propiedades textiles',
-					// Why section
-					'¿Por qué Confecciones POLCYR?': '¿Por qué Confecciones POLCYR?',
-					'Garantizamos calidad, sostenibilidad y cumplimiento en cada proyecto textil que desarrollamos.': 'Garantizamos calidad, sostenibilidad y cumplimiento en cada proyecto textil que desarrollamos.',
-					'Procesos sostenibles': 'Procesos sostenibles',
-					'Procesos productivos sostenibles y control de calidad integral en cada etapa.': 'Procesos productivos sostenibles y control de calidad integral en cada etapa.',
-					'Flexibilidad productiva': 'Flexibilidad productiva',
-					'Flexibilidad en volúmenes y tiempos de entrega adaptados a sus necesidades.': 'Flexibilidad en volúmenes y tiempos de entrega adaptados a sus necesidades.',
-					'Cumplimiento garantizado': 'Cumplimiento garantizado',
-					'Estricto cumplimiento de compromisos logísticos y comerciales.': 'Estricto cumplimiento de compromisos logísticos y comerciales.',
-					'Atención personalizada en cada etapa del proceso productivo y de exportación.': 'Atención personalizada en cada etapa del proceso productivo y de exportación.',
-					'Experiencia internacional': 'Experiencia internacional',
-					'Más de 20 años de experiencia en mercados nacionales e internacionales.': 'Más de 20 años de experiencia en mercados nacionales e internacionales.',
-					'Algodón Pima premium': 'Algodón Pima premium',
-					'Utilizamos los mejores algodones peruanos, especialmente el algodón Pima.': 'Utilizamos los mejores algodones peruanos, especialmente el algodón Pima.',
-					// Clients
-					'Nuestros Clientes': 'Nuestros Clientes',
-					'Trabajamos con marcas nacionales e internacionales que confían en nuestra calidad y experiencia': 'Trabajamos con marcas nacionales e internacionales que confían en nuestra calidad y experiencia',
-					'Clientes Nacionales': 'Clientes Nacionales',
-					'Clientes Internacionales': 'Clientes Internacionales',
-					// Footer
-					'Enlaces': 'Enlaces',
-					'Procesos': 'Procesos',
-					'Horario de Atención': 'Horario de Atención',
-					'9 AM - 6 PM, Lunes - Viernes': '9 AM - 6 PM, Lunes - Viernes',
-					'Brindamos atención personalizada para resolver tus consultas y coordinar tus pedidos de forma eficiente.': 'Brindamos atención personalizada para resolver tus consultas y coordinar tus pedidos de forma eficiente.',
-					'Llámanos': 'Llámanos',
-					'© 2025 Confecciones POLCYR. Todos los derechos reservados.': '© 2025 Confecciones POLCYR. Todos los derechos reservados.',
-					'Fabricamos prendas con calidad, precisión y cumplimiento. Más de 25 años de experiencia textil al servicio de marcas y empresas.': 'Fabricamos prendas con calidad, precisión y cumplimiento. Más de 25 años de experiencia textil al servicio de marcas y empresas.'
+					'Contacto': 'Contacto'
 				},
 				en: {
 					// Header
@@ -408,67 +167,7 @@
 					'Servicios': 'Services',
 					'Productos': 'Products',
 					'Clientes': 'Clients',
-					'Contacto': 'Contact',
-					// Hero
-					'Fabricación y exportación de prendas textiles de alta calidad': 'Manufacturing and export of high-quality textile garments',
-					'En Confecciones POLCYR S.R.L. fabricamos prendas que integran diseño, confort y durabilidad. Con más de 20 años de experiencia, nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima reconocido mundialmente.': 'At Confecciones POLCYR S.R.L. we manufacture garments that integrate design, comfort and durability. With more than 20 years of experience, we specialize in polo shirts, t-shirts, shorts and personalized garments, made with the best Peruvian cotton, especially the world-renowned Pima cotton.',
-					// About
-					'Sobre nosotros': 'About Us',
-					'Más de 20 años fabricando prendas textiles de alta calidad': 'More than 20 years manufacturing high-quality textile garments',
-					'Confecciones POLCYR S.R.L. es una empresa peruana especializada en la fabricación y exportación de prendas textiles. Nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima, reconocido mundialmente por su suavidad y resistencia.': 'Confecciones POLCYR S.R.L. is a Peruvian company specialized in the manufacture and export of textile garments. We specialize in polo shirts, t-shirts, shorts and personalized garments, made with the best Peruvian cotton, especially Pima cotton, recognized worldwide for its softness and resistance.',
-					'Prendas confeccionadas al mes': 'Garments manufactured per month',
-					'Procesos productivos sostenibles': 'Sustainable production processes',
-					'Flexibilidad en volúmenes y tiempos': 'Flexibility in volumes and times',
-					'Algodón Pima peruano': 'Peruvian Pima cotton',
-					'Control de calidad integral': 'Comprehensive quality control',
-					'Atención personalizada': 'Personalized attention',
-					'Más sobre nosotros': 'Learn more about us',
-					// Technology
-					'Nuestra Tecnología': 'Our Technology',
-					'Equipos de última generación para garantizar la máxima calidad en cada proceso productivo': 'State-of-the-art equipment to guarantee maximum quality in each production process',
-					'Tejedora Industrial': 'Industrial Weaving Machine',
-					'Tecnología avanzada de tejido que permite crear tejidos uniformes y resistentes con diferentes tipos de fibras y patrones complejos.': 'Advanced weaving technology that allows creating uniform and resistant fabrics with different types of fibers and complex patterns.',
-					'Alta velocidad de producción': 'High production speed',
-					'Control de calidad automático': 'Automatic quality control',
-					'Versatilidad en tipos de tejido': 'Versatility in fabric types',
-					'Estampadora Digital': 'Digital Printing Machine',
-					'Equipos de estampado digital de última generación que garantizan colores vibrantes y diseños precisos en cada prenda.': 'State-of-the-art digital printing equipment that guarantees vibrant colors and precise designs on every garment.',
-					'Impresión de alta resolución': 'High resolution printing',
-					'Colores duraderos y brillantes': 'Durable and bright colors',
-					'Diseños personalizados': 'Custom designs',
-					'Horno de Secado': 'Drying Oven',
-					'Sistema de secado controlado que asegura el curado perfecto de tintes y acabados, manteniendo la integridad de las fibras.': 'Controlled drying system that ensures perfect curing of dyes and finishes, maintaining fiber integrity.',
-					'Control de temperatura preciso': 'Precise temperature control',
-					'Secado uniforme y eficiente': 'Uniform and efficient drying',
-					'Conservación de propiedades textiles': 'Preservation of textile properties',
-					// Why section
-					'¿Por qué Confecciones POLCYR?': 'Why Confecciones POLCYR?',
-					'Garantizamos calidad, sostenibilidad y cumplimiento en cada proyecto textil que desarrollamos.': 'We guarantee quality, sustainability and compliance in every textile project we develop.',
-					'Procesos sostenibles': 'Sustainable processes',
-					'Procesos productivos sostenibles y control de calidad integral en cada etapa.': 'Sustainable production processes and comprehensive quality control at each stage.',
-					'Flexibilidad productiva': 'Production flexibility',
-					'Flexibilidad en volúmenes y tiempos de entrega adaptados a sus necesidades.': 'Flexibility in volumes and delivery times adapted to your needs.',
-					'Cumplimiento garantizado': 'Guaranteed compliance',
-					'Estricto cumplimiento de compromisos logísticos y comerciales.': 'Strict compliance with logistic and commercial commitments.',
-					'Atención personalizada en cada etapa del proceso productivo y de exportación.': 'Personalized attention at each stage of the production and export process.',
-					'Experiencia internacional': 'International experience',
-					'Más de 20 años de experiencia en mercados nacionales e internacionales.': 'More than 20 years of experience in national and international markets.',
-					'Algodón Pima premium': 'Premium Pima cotton',
-					'Utilizamos los mejores algodones peruanos, especialmente el algodón Pima.': 'We use the best Peruvian cotton, especially Pima cotton.',
-					// Clients
-					'Nuestros Clientes': 'Our Clients',
-					'Trabajamos con marcas nacionales e internacionales que confían en nuestra calidad y experiencia': 'We work with national and international brands that trust our quality and experience',
-					'Clientes Nacionales': 'National Clients',
-					'Clientes Internacionales': 'International Clients',
-					// Footer
-					'Enlaces': 'Links',
-					'Procesos': 'Processes',
-					'Horario de Atención': 'Business Hours',
-					'9 AM - 6 PM, Lunes - Viernes': '9 AM - 6 PM, Monday - Friday',
-					'Brindamos atención personalizada para resolver tus consultas y coordinar tus pedidos de forma eficiente.': 'We provide personalized attention to resolve your queries and coordinate your orders efficiently.',
-					'Llámanos': 'Call us',
-					'© 2025 Confecciones POLCYR. Todos los derechos reservados.': '© 2025 Confecciones POLCYR. All rights reserved.',
-					'Fabricamos prendas con calidad, precisión y cumplimiento. Más de 25 años de experiencia textil al servicio de marcas y empresas.': 'We manufacture garments with quality, precision and compliance. More than 25 years of textile experience serving brands and companies.'
+					'Contacto': 'Contact'
 				}
 			};
 			this.init();
@@ -479,9 +178,12 @@
 			this.translatePage();
 			
 			// Event listener para el botón de idioma
-			document.getElementById('languageToggle')?.addEventListener('click', () => {
-				this.toggleLanguage();
-			});
+			const languageToggle = document.getElementById('languageToggle');
+			if (languageToggle) {
+				languageToggle.addEventListener('click', () => {
+					this.toggleLanguage();
+				});
+			}
 		}
 
 		toggleLanguage() {
@@ -489,6 +191,11 @@
 			localStorage.setItem('language', this.currentLanguage);
 			this.updateLanguageButton();
 			this.translatePage();
+			
+			// Disparar evento para que otros componentes se enteren del cambio
+			window.dispatchEvent(new CustomEvent('languageChanged', {
+				detail: { language: this.currentLanguage }
+			}));
 		}
 
 		updateLanguageButton() {
@@ -518,25 +225,82 @@
 					element.textContent = enText;
 				}
 			});
-
-			// Traducir elementos por contenido de texto
-			const elementsToTranslate = document.querySelectorAll('h1, h2, h3, p, span, button');
-			
-			elementsToTranslate.forEach(element => {
-				const text = element.textContent?.trim();
-				if (text && this.translations[this.currentLanguage][text]) {
-					element.textContent = this.translations[this.currentLanguage][text];
-				}
-			});
 		}
 	}
 
-	// Inicializar cuando el DOM esté listo
+	// Menu responsive
+	function initMobileMenu() {
+		const menuToggle = document.querySelector('.menu-toggle');
+		const navMenu = document.querySelector('.nav-menu');
+		let menuOverlay = document.querySelector('.menu-overlay');
+		
+		if (!menuToggle || !navMenu) return;
+		
+		// Crear overlay si no existe
+		if (!menuOverlay) {
+			const overlay = document.createElement('div');
+			overlay.className = 'menu-overlay';
+			overlay.style.cssText = `
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				z-index: 998;
+			`;
+			document.body.appendChild(overlay);
+			menuOverlay = overlay;
+		}
+		
+		menuToggle.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+			menuOverlay.classList.toggle('active');
+			menuOverlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
+			document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+		});
+		
+		// Cerrar menu al hacer click en overlay
+		menuOverlay.addEventListener('click', () => {
+			navMenu.classList.remove('active');
+			menuOverlay.classList.remove('active');
+			menuOverlay.style.display = 'none';
+			document.body.style.overflow = 'auto';
+		});
+		
+		// Cerrar menu al hacer click en un enlace
+		navMenu.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', () => {
+				navMenu.classList.remove('active');
+				menuOverlay.classList.remove('active');
+				menuOverlay.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			});
+		});
+		
+		// Cerrar menu al cambiar tamaño de pantalla
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 768) {
+				navMenu.classList.remove('active');
+				menuOverlay.classList.remove('active');
+				menuOverlay.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			}
+		});
+	}
+
+	// Inicializar
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', () => {
 			new LanguageManager();
+			initMobileMenu();
 		});
 	} else {
 		new LanguageManager();
+		initMobileMenu();
 	}
+
+	// Hacer disponible globalmente
+	window.LanguageManager = LanguageManager;
 </script>

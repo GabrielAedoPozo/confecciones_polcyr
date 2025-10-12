@@ -2,7 +2,7 @@
 import "../styles/style.css";
 ---
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="slider" role="region" aria-label="Galería de productos" data-slider>
     <div class="slider__viewport">
       <ul class="slider__track" data-track>
@@ -62,14 +62,22 @@ import "../styles/style.css";
         </li>
       </ul>
     </div>
-    <button class="slider__btn prev" data-action="prev">&#10094;</button>
-    <button class="slider__btn next" data-action="next">&#10095;</button>
+    <button class="slider__btn prev" data-action="prev" aria-label="Imagen anterior">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button class="slider__btn next" data-action="next" aria-label="Siguiente imagen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
     <div class="slider__dots" data-dots></div>
   </div>
 
   <!-- Sección Sobre Nosotros integrada en el hero -->
-  <div class="about-us">
-    <div class="about-container">
+  <section class="about-us" id="nosotros">
+    <section class="about-container">
       <div class="about-images">
         <div class="image-gallery">
           <img src="/confecciones_polcyr/img/nosotros.webp" alt="Equipo Polcyr Confecciones" class="gallery-img active" />
@@ -139,14 +147,14 @@ import "../styles/style.css";
         </div>
         
         <div class="features">
-        
-        <button class="cta-button" data-es="Más sobre nosotros" data-en="Learn more about us">Más sobre nosotros</button>
+
+        <a href="/confecciones_polcyr/nosotros" class="cta-button" data-es="Más sobre nosotros" data-en="Learn more about us">Más sobre nosotros</a>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Sección Nuestra Tecnología -->
-  <div class="technology-section">
+  <section class="technology-section" id="tecnologia">
     <div class="technology-container">
       <div class="section-header">
         <h2 data-es="Nuestra Tecnología" data-en="Our Technology">Nuestra Tecnología</h2>
@@ -221,10 +229,10 @@ import "../styles/style.css";
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Sección Por qué POLCYR -->
-  <div class="why-polcyr-section">
+  <section class="why-polcyr-section" id="porque">
     <div class="why-polcyr-container">
       <div class="section-header">
         <h2 data-es="¿Por qué Confecciones POLCYR?" data-en="Why Confecciones POLCYR?">¿Por qué Confecciones POLCYR?</h2>
@@ -294,10 +302,10 @@ import "../styles/style.css";
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Sección Clientes -->
-  <div class="clients-section">
+  <section class="clients-section" id="clientes">
     <div class="clients-container">
       <div class="section-header">
         <h2 data-es="Nuestros Clientes" data-en="Our Clients">Nuestros Clientes</h2>
@@ -354,221 +362,205 @@ import "../styles/style.css";
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </section>
+<script is:inline>
+	// Funciones del hero inline para evitar problemas de carga
+	
+	// Slider infinito con clones - Mejorado
+	function initSlider() {
+		const sliders = document.querySelectorAll('[data-slider]');
+		
+		sliders.forEach(slider => {
+			if (slider.dataset.initialized) return;
+			slider.dataset.initialized = 'true';
+			
+			const track = slider.querySelector('[data-track]');
+			const originalSlides = Array.from(track.children);
+			const total = originalSlides.length;
+			
+			// Crear clones para loop infinito
+			const firstClone = originalSlides[0].cloneNode(true);
+			const lastClone = originalSlides[total - 1].cloneNode(true);
+			
+			track.appendChild(firstClone);
+			track.insertBefore(lastClone, track.firstChild);
+			
+			const nextBtn = slider.querySelector('[data-action="next"]');
+			const prevBtn = slider.querySelector('[data-action="prev"]');
+			const dotsContainer = slider.querySelector('[data-dots]');
+			
+			let currentIndex = 1;
+			let interval;
+			let isTransitioning = false;
+			
+			// Crear dots solo para slides originales
+			dotsContainer.innerHTML = '';
+			originalSlides.forEach((_, i) => {
+				const dot = document.createElement('button');
+				dot.className = 'dot';
+				dot.addEventListener('click', () => goToSlide(i + 1));
+				dotsContainer.appendChild(dot);
+			});
+			const dots = Array.from(dotsContainer.children);
+			
+			function updateDots() {
+				const activeIndex = ((currentIndex - 1 + total) % total);
+				dots.forEach((dot, i) => {
+					dot.classList.toggle('active', i === activeIndex);
+				});
+			}
+			
+			function goToSlide(index, withTransition = true) {
+				if (isTransitioning) return;
+				
+				currentIndex = index;
+				track.style.transition = withTransition ? 'transform 400ms ease' : 'none';
+				track.style.transform = `translateX(-${currentIndex * 100}%)`;
+				updateDots();
+				
+				if (withTransition) {
+					isTransitioning = true;
+				}
+			}
+			
+			function handleTransitionEnd() {
+				isTransitioning = false;
+				
+				if (currentIndex === 0) {
+					currentIndex = total;
+					goToSlide(currentIndex, false);
+				} else if (currentIndex === total + 1) {
+					currentIndex = 1;
+					goToSlide(currentIndex, false);
+				}
+			}
+			
+			track.addEventListener('transitionend', handleTransitionEnd);
+			
+			function nextSlide() {
+				goToSlide(currentIndex + 1);
+			}
+			
+			function prevSlide() {
+				goToSlide(currentIndex - 1);
+			}
+			
+			function startAutoplay() {
+				clearInterval(interval);
+				interval = setInterval(nextSlide, 3000); // Aumentar tiempo para mejor experiencia
+			}
+			
+			function stopAutoplay() {
+				clearInterval(interval);
+			}
+			
+			// Event listeners
+			if (nextBtn) {
+				nextBtn.addEventListener('click', () => {
+					nextSlide();
+					startAutoplay();
+				});
+			}
+			
+			if (prevBtn) {
+				prevBtn.addEventListener('click', () => {
+					prevSlide();
+					startAutoplay();
+				});
+			}
+			
+			// Pausar en hover solo en desktop
+			if (window.innerWidth > 768) {
+				slider.addEventListener('mouseenter', stopAutoplay);
+				slider.addEventListener('mouseleave', startAutoplay);
+			}
+			
+			// Mejorar visibilidad del texto según el dispositivo
+			function adjustTextVisibility() {
+				const slideTexts = document.querySelectorAll('.slide-text');
+				const isMobile = window.innerWidth <= 768;
+				
+				slideTexts.forEach(text => {
+					if (isMobile) {
+						text.style.backdropFilter = 'blur(3px)';
+						text.style.background = 'rgba(0, 0, 0, 0.4)';
+					} else {
+						text.style.backdropFilter = 'blur(1px)';
+						text.style.background = 'rgba(0, 0, 0, 0.1)';
+					}
+				});
+			}
+			
+			// Ajustar al cargar y al redimensionar
+			adjustTextVisibility();
+			window.addEventListener('resize', adjustTextVisibility);
+			
+			// Inicializar
+			goToSlide(currentIndex, false);
+			startAutoplay();
+		});
+	}
 
-<script defer>
-  // Slider infinito con clones
-  function initSlider() {
-    const sliders = document.querySelectorAll('[data-slider]');
-    
-    sliders.forEach(slider => {
-      if (slider.dataset.initialized) return;
-      slider.dataset.initialized = 'true';
-      
-      const track = slider.querySelector('[data-track]');
-      const originalSlides = Array.from(track.children);
-      const total = originalSlides.length;
-      
-      // Crear clones para loop infinito
-      const firstClone = originalSlides[0].cloneNode(true);
-      const lastClone = originalSlides[total - 1].cloneNode(true);
-      
-      track.appendChild(firstClone);
-      track.insertBefore(lastClone, track.firstChild);
-      
-      const nextBtn = slider.querySelector('[data-action="next"]');
-      const prevBtn = slider.querySelector('[data-action="prev"]');
-      const dotsContainer = slider.querySelector('[data-dots]');
-      
-      let currentIndex = 1; // Empezar en el primer slide real
-      let interval;
-      let isTransitioning = false;
-      
-      // Crear dots solo para slides originales
-      dotsContainer.innerHTML = '';
-      originalSlides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'dot';
-        dot.addEventListener('click', () => goToSlide(i + 1));
-        dotsContainer.appendChild(dot);
-      });
-      const dots = Array.from(dotsContainer.children);
-      
-      function updateDots() {
-        const activeIndex = ((currentIndex - 1 + total) % total);
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === activeIndex);
-        });
-      }
-      
-      function goToSlide(index, withTransition = true) {
-        if (isTransitioning) return;
-        
-        currentIndex = index;
-        track.style.transition = withTransition ? 'transform 400ms ease' : 'none';
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateDots();
-        
-        if (withTransition) {
-          isTransitioning = true;
-        }
-      }
-      
-      function handleTransitionEnd() {
-        isTransitioning = false;
-        
-        if (currentIndex === 0) {
-          // Llegamos al clon del último, saltar al último real
-          currentIndex = total;
-          goToSlide(currentIndex, false);
-        } else if (currentIndex === total + 1) {
-          // Llegamos al clon del primero, saltar al primero real
-          currentIndex = 1;
-          goToSlide(currentIndex, false);
-        }
-      }
-      
-      track.addEventListener('transitionend', handleTransitionEnd);
-      
-      function nextSlide() {
-        goToSlide(currentIndex + 1);
-      }
-      
-      function prevSlide() {
-        goToSlide(currentIndex - 1);
-      }
-      
-      function startAutoplay() {
-        clearInterval(interval);
-        interval = setInterval(nextSlide, 2500); // Reducir a 2.5 segundos para que se vea más movimiento
-      }
-      
-      function stopAutoplay() {
-        clearInterval(interval);
-      }
-      
-      // Event listeners
-      nextBtn.addEventListener('click', () => {
-        nextSlide();
-        startAutoplay(); // Reiniciar autoplay
-      });
-      
-      prevBtn.addEventListener('click', () => {
-        prevSlide();
-        startAutoplay(); // Reiniciar autoplay
-      });
-      
-      // Pausar en hover
-      slider.addEventListener('mouseenter', stopAutoplay);
-      slider.addEventListener('mouseleave', startAutoplay);
-      
-      // Pausar cuando la pestaña no está visible
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
-      });
-      
-      // Inicializar
-      goToSlide(currentIndex, false);
-      startAutoplay();
-    });
-  }
-  
-  // Mini galería de imágenes para la sección sobre nosotros
-  function initAboutGallery() {
-    const dots = document.querySelectorAll('.gallery-dot');
-    const images = document.querySelectorAll('.gallery-img');
-    
-    if (dots.length === 0 || images.length === 0) return;
-    
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        // Remover active de todos
-        dots.forEach(d => d.classList.remove('active'));
-        images.forEach(img => img.classList.remove('active'));
-        
-        // Activar el seleccionado
-        dot.classList.add('active');
-        images[index].classList.add('active');
-      });
-    });
-    
-    // Auto-cambio cada 4 segundos
-    let currentIndex = 0;
-    setInterval(() => {
-      dots.forEach(d => d.classList.remove('active'));
-      images.forEach(img => img.classList.remove('active'));
-      
-      currentIndex = (currentIndex + 1) % images.length;
-      dots[currentIndex].classList.add('active');
-      images[currentIndex].classList.add('active');
-    }, 4000);
-  }
-  
-  // Menu responsive
-  function initMobileMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    
-    if (!menuToggle || !navMenu) return;
-    
-    // Crear overlay si no existe
-    if (!menuOverlay) {
-      const overlay = document.createElement('div');
-      overlay.className = 'menu-overlay';
-      document.body.appendChild(overlay);
-    }
-    
-    const overlay = document.querySelector('.menu-overlay');
-    
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
-      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-    });
-    
-    // Cerrar menu al hacer click en overlay
-    overlay.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      overlay.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-    
-    // Cerrar menu al hacer click en un enlace
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      });
-    });
-    
-    // Cerrar menu al cambiar tamaño de pantalla
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-  }
-  
-  // Ejecutar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      initSlider();
-      initAboutGallery();
-      initMobileMenu();
-    });
-  } else {
-    initSlider();
-    initAboutGallery();
-    initMobileMenu();
-  }
+	// Mini galería de imágenes para la sección sobre nosotros
+	function initAboutGallery() {
+		const dots = document.querySelectorAll('.gallery-dot');
+		const images = document.querySelectorAll('.gallery-img');
+		
+		if (dots.length === 0 || images.length === 0) return;
+		
+		dots.forEach((dot, index) => {
+			dot.addEventListener('click', () => {
+				dots.forEach(d => d.classList.remove('active'));
+				images.forEach(img => img.classList.remove('active'));
+				
+				dot.classList.add('active');
+				images[index].classList.add('active');
+			});
+		});
+		
+		// Auto-cambio cada 4 segundos
+		let currentIndex = 0;
+		setInterval(() => {
+			dots.forEach(d => d.classList.remove('active'));
+			images.forEach(img => img.classList.remove('active'));
+			
+			currentIndex = (currentIndex + 1) % images.length;
+			dots[currentIndex].classList.add('active');
+			images[currentIndex].classList.add('active');
+		}, 4000);
+	}
+
+	// Traductor para el hero
+	function translateHero() {
+		const language = localStorage.getItem('language') || 'es';
+		
+		document.querySelectorAll('[data-es]').forEach(element => {
+			const esText = element.getAttribute('data-es');
+			const enText = element.getAttribute('data-en');
+			
+			if (language === 'es' && esText) {
+				element.textContent = esText;
+			} else if (language === 'en' && enText) {
+				element.textContent = enText;
+			}
+		});
+	}
+
+	// Escuchar cambios de idioma
+	window.addEventListener('languageChanged', translateHero);
+
+	// Inicializar cuando el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			initSlider();
+			initAboutGallery();
+			translateHero();
+		});
+	} else {
+		initSlider();
+		initAboutGallery();
+		translateHero();
+	}
 </script>
 
