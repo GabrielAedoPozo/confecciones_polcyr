@@ -30,21 +30,24 @@ El sitio web oficial fue desarrollado utilizando **Astro**, **JavaScript** y ges
 ```
 ##⚙️ Instalación y ejecución local
 
-# 1. Clonar el repositorio
+- 1. Clonar el repositorio
+´´´bash
 git clone https://github.com/tuusuario/confecciones-polcyr.git
-bash
-Copiar código
+´´´
 # 2. Entrar en la carpeta del proyecto
+´´´bash
 cd confecciones-polcyr
-bash
-Copiar código
-# 3. Instalar dependencias
-pnpm install
-bash
-Copiar código
-# 4. Ejecutar el servidor de desarrollo
-pnpm run dev
+´´´
 
+# 3. Instalar dependencias
+´´´bash
+pnpm install
+´´´
+
+# 4. Ejecutar el servidor de desarrollo
+´´´bash
+pnpm run dev
+´´´
 #🌍 Sobre la marca
 
 Confecciones Polcyr es una empresa textil reconocida internacionalmente por su compromiso con la calidad, la innovación y la moda sostenible.
