@@ -28,27 +28,52 @@ El sitio web oficial fue desarrollado utilizando **Astro**, **JavaScript** y ges
 ├── package.json         # Configuración de dependencias y scripts
 └── astro.config.mjs     # Configuración de Astro
 ```
-##⚙️ Instalación y ejecución local
+## ⚙️ Instalación y ejecución local
 
-- 1. Clonar el repositorio
-´´´bash
+Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
+
+```bash
+# 1. Clonar el repositorio
 git clone https://github.com/tuusuario/confecciones-polcyr.git
-´´´
+
 # 2. Entrar en la carpeta del proyecto
-´´´bash
 cd confecciones-polcyr
-´´´
 
 # 3. Instalar dependencias
-´´´bash
 pnpm install
-´´´
 
 # 4. Ejecutar el servidor de desarrollo
-´´´bash
 pnpm run dev
-´´´
-#🌍 Sobre la marca
+```
 
-Confecciones Polcyr es una empresa textil reconocida internacionalmente por su compromiso con la calidad, la innovación y la moda sostenible.
+## 🌍 Sobre la marca
+
+Confecciones Polcyr es una empresa textil reconocida internacionalmente por su compromiso con la calidad, la innovación y la moda sostenible.  
 Durante más de dos décadas, ha vestido a miles de personas en distintos países, manteniendo siempre su esencia: crear prendas con pasión, precisión y estilo.
+
+---
+
+## 💡 Características del sitio
+
+- Diseño moderno, profesional y adaptable a cualquier dispositivo.  
+- Desarrollado con un enfoque minimalista y rápido gracias a Astro.  
+- Interactividad ligera y fluida con JavaScript.  
+- Optimización para SEO y rendimiento web.  
+- Gestión eficiente de dependencias con pnpm.
+
+---
+
+## 🧑‍💻 Desarrollado por
+
+Desarrollado por: Gabriel Aedo
+Repositorio: [https://github.com/GabrielAedoPozo/confecciones-polcyr](https://github.com/tuusuario/confecciones-polcyr)  
+
+Hecho con ❤️ usando Astro, JavaScript y pnpm.
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso privado y pertenece a Confecciones Polcyr.  
+No se permite su redistribución, copia o modificación sin autorización previa.
+
