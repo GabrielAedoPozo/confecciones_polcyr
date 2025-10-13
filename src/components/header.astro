@@ -3,18 +3,18 @@
 ---
 <header class="site-header">
 	<nav class="nav" data-open="false">
-		<a class="brand" href="/" aria-label="Inicio">
+		<a class="brand" href="/confecciones_polcyr/" aria-label="Inicio">
 			<img src="/confecciones_polcyr/img/logoPrincipal.png" alt="Polcyr Confecciones" height="100" />
 		</a>
 
 		<button class="menu-toggle" aria-label="Abrir menú">☰</button>
 
 		<ul class="nav-menu">
-			<li><a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+			<li><a href="/confecciones_polcyr/" data-es="Inicio" data-en="Home">Inicio</a></li>
+			<li><a href="/confecciones_polcyr/productos" data-es="Productos" data-en="Products">Productos</a></li>
 			<li><a href="/confecciones_polcyr/nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a></li>
-			<li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
-			<li><a href="#productos" data-es="Productos" data-en="Products">Productos</a></li>
-			<li><a href="#clientes" data-es="Clientes" data-en="Clients">Clientes</a></li>
+			<li><a href="/confecciones_polcyr/procesos" data-es="Procesos" data-en="Processes">Procesos</a></li>
+			<li><a href="/confecciones_polcyr/#clientes" data-es="Clientes" data-en="Clients">Clientes</a></li>
 			<li><a href="/confecciones_polcyr/contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
 		</ul>
 
@@ -143,6 +143,73 @@
 		.links .cta { width: 100%; text-align: center; }
 	}
 
+	/* Completar estilos responsive del header */
+	@media (max-width: 768px) {
+		.nav {
+			padding: 0 1rem;
+		}
+
+		.nav-menu {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			width: 80%;
+			height: 100vh;
+			background: white;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 4rem 2rem 2rem;
+			box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+			transition: left 0.3s ease;
+			z-index: 999;
+			gap: 0;
+		}
+
+		.nav-menu.active {
+			left: 0;
+		}
+
+		.nav-menu li {
+			width: 100%;
+		}
+
+		.nav-menu a {
+			font-size: 1.2rem;
+			padding: 1rem 0;
+			width: 100%;
+			border-bottom: 1px solid #e2e8f0;
+			border-radius: 0;
+		}
+
+		.header-actions {
+			gap: 0.5rem;
+		}
+
+		.language-toggle {
+			padding: 0.4rem 0.8rem;
+			font-size: 0.8rem;
+		}
+
+		.lang-flag {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.brand img {
+			height: 50px;
+		}
+
+		.language-toggle {
+			padding: 0.3rem 0.6rem;
+		}
+
+		.lang-text {
+			display: none;
+		}
+	}
+
 </style>
 
 <script is:inline>
@@ -228,7 +295,7 @@
 		}
 	}
 
-	// Menu responsive
+	// Menu responsive mejorado
 	function initMobileMenu() {
 		const menuToggle = document.querySelector('.menu-toggle');
 		const navMenu = document.querySelector('.nav-menu');
@@ -249,32 +316,70 @@
 				height: 100%;
 				background: rgba(0,0,0,0.5);
 				z-index: 998;
+				opacity: 0;
+				transition: opacity 0.3s ease;
 			`;
 			document.body.appendChild(overlay);
 			menuOverlay = overlay;
 		}
 		
 		menuToggle.addEventListener('click', () => {
-			navMenu.classList.toggle('active');
-			menuOverlay.classList.toggle('active');
-			menuOverlay.style.display = navMenu.classList.contains('active') ? 'block' : 'none';
-			document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+			const isActive = navMenu.classList.contains('active');
+			
+			if (isActive) {
+				// Cerrar menú
+				navMenu.classList.remove('active');
+				menuOverlay.classList.remove('active');
+				menuOverlay.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			} else {
+				// Abrir menú
+				navMenu.classList.add('active');
+				menuOverlay.classList.add('active');
+				menuOverlay.style.display = 'block';
+				document.body.style.overflow = 'hidden';
+				// Forzar el opacity después de display
+				setTimeout(() => {
+					menuOverlay.style.opacity = '1';
+				}, 10);
+			}
 		});
 		
 		// Cerrar menu al hacer click en overlay
 		menuOverlay.addEventListener('click', () => {
 			navMenu.classList.remove('active');
 			menuOverlay.classList.remove('active');
-			menuOverlay.style.display = 'none';
+			menuOverlay.style.opacity = '0';
+			setTimeout(() => {
+				menuOverlay.style.display = 'none';
+			}, 300);
 			document.body.style.overflow = 'auto';
 		});
 		
 		// Cerrar menu al hacer click en un enlace
 		navMenu.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', () => {
+			link.addEventListener('click', (e) => {
+				const href = link.getAttribute('href');
+				
+				// Si es un enlace con ancla hacia la página principal
+				if (href.includes('#') && !href.startsWith('/confecciones_polcyr/#')) {
+					// Si no estamos en la página principal, redirigir
+					if (!window.location.pathname.endsWith('/') && !window.location.pathname.includes('index')) {
+						e.preventDefault();
+						window.location.href = href.replace('#', '/confecciones_polcyr/#');
+						return;
+					}
+				}
+				
+				// Cerrar menú móvil
 				navMenu.classList.remove('active');
 				menuOverlay.classList.remove('active');
-				menuOverlay.style.display = 'none';
+				if (menuOverlay) {
+					menuOverlay.style.opacity = '0';
+					setTimeout(() => {
+						menuOverlay.style.display = 'none';
+					}, 300);
+				}
 				document.body.style.overflow = 'auto';
 			});
 		});
@@ -284,7 +389,9 @@
 			if (window.innerWidth > 768) {
 				navMenu.classList.remove('active');
 				menuOverlay.classList.remove('active');
-				menuOverlay.style.display = 'none';
+				if (menuOverlay) {
+					menuOverlay.style.display = 'none';
+				}
 				document.body.style.overflow = 'auto';
 			}
 		});

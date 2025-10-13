@@ -19,11 +19,11 @@ import "../styles/style.css";
       <div class="footer-column">
         <h3 data-es="Enlaces" data-en="Links">Enlaces</h3>
         <ul class="footer-links">
-          <li><a href="#nosotros" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a></li>
-          <li><a href="#" data-es="Procesos" data-en="Processes">Procesos</a></li>
-          <li><a href="#" data-es="Productos" data-en="Products">Productos</a></li>
-          <li><a href="#clientes" data-es="Clientes" data-en="Clients">Clientes</a></li>
-          <li><a href="#" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="/confecciones_polcyr/nosotros" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a></li>
+          <li><a href="/confecciones_polcyr/#tecnologia" data-es="Procesos" data-en="Processes">Procesos</a></li>
+          <li><a href="/confecciones_polcyr/productos" data-es="Productos" data-en="Products">Productos</a></li>
+          <li><a href="/confecciones_polcyr/#clientes" data-es="Clientes" data-en="Clients">Clientes</a></li>
+          <li><a href="/confecciones_polcyr/contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
         </ul>
       </div>
 
@@ -66,7 +66,7 @@ import "../styles/style.css";
           <p class="schedule-description" data-es="Brindamos atención personalizada para resolver tus consultas y coordinar tus pedidos de forma eficiente." data-en="We provide personalized attention to resolve your queries and coordinate your orders efficiently.">
             Brindamos atención personalizada para resolver tus consultas y coordinar tus pedidos de forma eficiente.
           </p>
-          <button class="contact-cta" data-es="Llámanos" data-en="Call us">Llámanos</button>
+          <a href="tel:+5113244754" class="contact-cta" data-es="Llámanos" data-en="Call us">Llámanos</a>
         </div>
       </div>
     </div>
@@ -77,3 +77,55 @@ import "../styles/style.css";
     </div>
   </div>
 </footer>
+
+<script is:inline>
+	// Traductor para el footer
+	function translateFooter() {
+		const language = localStorage.getItem('language') || 'es';
+		
+		document.querySelectorAll('[data-es]').forEach(element => {
+			const esText = element.getAttribute('data-es');
+			const enText = element.getAttribute('data-en');
+			
+			if (language === 'es' && esText) {
+				element.textContent = esText;
+			} else if (language === 'en' && enText) {
+				element.textContent = enText;
+			}
+		});
+	}
+
+	// Escuchar cambios de idioma
+	window.addEventListener('languageChanged', translateFooter);
+
+	// Manejar navegación con anclas desde el footer
+	function initFooterNavigation() {
+		const footerLinks = document.querySelectorAll('.footer-links a');
+		
+		footerLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				const href = link.getAttribute('href');
+				
+				// Si es un enlace con ancla hacia la página principal
+				if (href.includes('#') && href.startsWith('/confecciones_polcyr/#')) {
+					// Si no estamos en la página principal, permitir navegación normal
+					if (!window.location.pathname.endsWith('/') && !window.location.pathname.includes('index')) {
+						// El navegador manejará esto automáticamente
+						return;
+					}
+				}
+			});
+		});
+	}
+
+	// Inicializar cuando el DOM esté listo
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			translateFooter();
+			initFooterNavigation();
+		});
+	} else {
+		translateFooter();
+		initFooterNavigation();
+	}
+</script>
