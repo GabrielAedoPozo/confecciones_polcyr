@@ -550,17 +550,71 @@ import "../styles/style.css";
 	// Escuchar cambios de idioma
 	window.addEventListener('languageChanged', translateHero);
 
+	// Animaciones al hacer scroll
+	function initScrollAnimations() {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
+			});
+		}, {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		});
+
+		// Observar tech cards
+		document.querySelectorAll('.tech-card').forEach((card, index) => {
+			card.style.transitionDelay = `${index * 0.1}s`;
+			observer.observe(card);
+		});
+
+		// Observar why cards
+		document.querySelectorAll('.why-card').forEach((card, index) => {
+			card.style.transitionDelay = `${index * 0.1}s`;
+			observer.observe(card);
+		});
+
+		// Observar client logos
+		document.querySelectorAll('.client-logo').forEach((logo, index) => {
+			logo.style.transitionDelay = `${index * 0.05}s`;
+			observer.observe(logo);
+		});
+
+		// Observar section headers
+		document.querySelectorAll('.section-header').forEach(header => {
+			header.style.opacity = '0';
+			header.style.transform = 'translateY(20px)';
+			header.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+			observer.observe(header);
+			
+			// Cuando sea visible
+			const headerObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.style.opacity = '1';
+						entry.target.style.transform = 'translateY(0)';
+					}
+				});
+			}, { threshold: 0.2 });
+			
+			headerObserver.observe(header);
+		});
+	}
+
 	// Inicializar cuando el DOM esté listo
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', () => {
 			initSlider();
 			initAboutGallery();
 			translateHero();
+			initScrollAnimations();
 		});
 	} else {
 		initSlider();
 		initAboutGallery();
 		translateHero();
+		initScrollAnimations();
 	}
 </script>
 
