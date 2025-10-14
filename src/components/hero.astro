@@ -549,9 +549,18 @@ import "../styles/style.css";
 
 	// Escuchar cambios de idioma
 	window.addEventListener('languageChanged', translateHero);
-
-	// Animaciones al hacer scroll
+// Animaciones al hacer scroll - Solo desktop
 	function initScrollAnimations() {
+		// No ejecutar en móvil
+		if (window.innerWidth <= 768) {
+			// Asegurar que todos los elementos sean visibles en móvil
+			document.querySelectorAll('.tech-card, .why-card, .client-logo').forEach(el => {
+				el.style.opacity = '1';
+				el.style.transform = 'none';
+			});
+			return;
+		}
+
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
@@ -563,23 +572,22 @@ import "../styles/style.css";
 			rootMargin: '0px 0px -50px 0px'
 		});
 
-		// Observar tech cards
+		// Solo observar en desktop
 		document.querySelectorAll('.tech-card').forEach((card, index) => {
 			card.style.transitionDelay = `${index * 0.1}s`;
 			observer.observe(card);
 		});
 
-		// Observar why cards
 		document.querySelectorAll('.why-card').forEach((card, index) => {
 			card.style.transitionDelay = `${index * 0.1}s`;
 			observer.observe(card);
 		});
 
-		// Observar client logos
-		document.querySelectorAll('.client-logo').forEach((logo, index) => {
-			logo.style.transitionDelay = `${index * 0.05}s`;
-			observer.observe(logo);
-		});
+		// NO observar client logos para evitar problemas
+		// document.querySelectorAll('.client-logo').forEach((logo, index) => {
+		//   logo.style.transitionDelay = `${index * 0.05}s`;
+		//   observer.observe(logo);
+		// });
 
 		// Observar section headers
 		document.querySelectorAll('.section-header').forEach(header => {

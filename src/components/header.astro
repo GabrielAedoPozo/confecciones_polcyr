@@ -295,11 +295,11 @@
 		}
 	}
 
-	// Menu responsive mejorado
+	// Funcionalidad del menú móvil
 	function initMobileMenu() {
 		const menuToggle = document.querySelector('.menu-toggle');
 		const navMenu = document.querySelector('.nav-menu');
-		let menuOverlay = document.querySelector('.menu-overlay');
+		const menuOverlay = document.querySelector('.menu-overlay');
 		
 		if (!menuToggle || !navMenu) return;
 		
@@ -307,92 +307,54 @@
 		if (!menuOverlay) {
 			const overlay = document.createElement('div');
 			overlay.className = 'menu-overlay';
-			overlay.style.cssText = `
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(0,0,0,0.5);
-				z-index: 998;
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			`;
 			document.body.appendChild(overlay);
-			menuOverlay = overlay;
 		}
 		
-		menuToggle.addEventListener('click', () => {
-			const isActive = navMenu.classList.contains('active');
+		const overlay = document.querySelector('.menu-overlay');
+		
+		function openMenu() {
+			navMenu.classList.add('active');
+			overlay.classList.add('active');
+			document.body.style.overflow = 'hidden';
+		}
+		
+		function closeMenu() {
+			navMenu.classList.remove('active');
+			overlay.classList.remove('active');
+			document.body.style.overflow = '';
+		}
+		
+		// Toggle menu
+		menuToggle.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
 			
-			if (isActive) {
-				// Cerrar menú
-				navMenu.classList.remove('active');
-				menuOverlay.classList.remove('active');
-				menuOverlay.style.display = 'none';
-				document.body.style.overflow = 'auto';
+			if (navMenu.classList.contains('active')) {
+				closeMenu();
 			} else {
-				// Abrir menú
-				navMenu.classList.add('active');
-				menuOverlay.classList.add('active');
-				menuOverlay.style.display = 'block';
-				document.body.style.overflow = 'hidden';
-				// Forzar el opacity después de display
-				setTimeout(() => {
-					menuOverlay.style.opacity = '1';
-				}, 10);
+				openMenu();
 			}
 		});
 		
-		// Cerrar menu al hacer click en overlay
-		menuOverlay.addEventListener('click', () => {
-			navMenu.classList.remove('active');
-			menuOverlay.classList.remove('active');
-			menuOverlay.style.opacity = '0';
-			setTimeout(() => {
-				menuOverlay.style.display = 'none';
-			}, 300);
-			document.body.style.overflow = 'auto';
-		});
+		// Cerrar al hacer click en overlay
+		overlay.addEventListener('click', closeMenu);
 		
-		// Cerrar menu al hacer click en un enlace
+		// Cerrar al hacer click en un link
 		navMenu.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', (e) => {
-				const href = link.getAttribute('href');
-				
-				// Si es un enlace con ancla hacia la página principal
-				if (href.includes('#') && !href.startsWith('/confecciones_polcyr/#')) {
-					// Si no estamos en la página principal, redirigir
-					if (!window.location.pathname.endsWith('/') && !window.location.pathname.includes('index')) {
-						e.preventDefault();
-						window.location.href = href.replace('#', '/confecciones_polcyr/#');
-						return;
-					}
-				}
-				
-				// Cerrar menú móvil
-				navMenu.classList.remove('active');
-				menuOverlay.classList.remove('active');
-				if (menuOverlay) {
-					menuOverlay.style.opacity = '0';
-					setTimeout(() => {
-						menuOverlay.style.display = 'none';
-					}, 300);
-				}
-				document.body.style.overflow = 'auto';
-			});
+			link.addEventListener('click', closeMenu);
 		});
 		
-		// Cerrar menu al cambiar tamaño de pantalla
+		// Cerrar con tecla Escape
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+				closeMenu();
+			}
+		});
+		
+		// Cerrar al redimensionar ventana
 		window.addEventListener('resize', () => {
 			if (window.innerWidth > 768) {
-				navMenu.classList.remove('active');
-				menuOverlay.classList.remove('active');
-				if (menuOverlay) {
-					menuOverlay.style.display = 'none';
-				}
-				document.body.style.overflow = 'auto';
+				closeMenu();
 			}
 		});
 	}
