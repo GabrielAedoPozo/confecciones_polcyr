@@ -1,0 +1,457 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import "../styles/style.css";
+---
+
+<Layout title="Productos - Confecciones POLCYR">
+	<Header />
+	
+	<main class="products-page">
+		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p5.png'); --page-header-overlay:0.85">
+			<div class="page-header__inner">
+				<h1 class="page-header__title" data-es="Nuestros Productos" data-en="Our Products">Nuestros Productos</h1>
+				<p class="page-header__subtitle" data-es="Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad" data-en="We manufacture a wide range of textile products with the best materials and the highest quality">Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad</p>
+			</div>
+		</header>
+
+		<!-- Barra de navegación rápida -->
+		<section class="filter-section">
+			<div class="container">
+				<div class="filter-buttons">
+					<a href="#polos" class="filter-btn" data-es="Polos" data-en="Polos">Polos</a>
+					<a href="#poleras" class="filter-btn" data-es="Poleras" data-en="T-shirts">Poleras</a>
+					<a href="#shorts" class="filter-btn" data-es="Shorts" data-en="Shorts">Shorts</a>
+					<a href="#delantales" class="filter-btn" data-es="Delantales" data-en="Aprons">Delantales</a>
+					<a href="#ropa-industrial" class="filter-btn" data-es="Ropa industrial" data-en="Industrial">Ropa industrial</a>
+					<a href="#personalizados" class="filter-btn" data-es="Personalizados" data-en="Custom">Personalizados</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Showcase de categorías -->
+		<section class="products-showcase">
+			<div class="container">
+				
+				<!-- Categoría: Polos -->
+				<div class="category-section" id="polos">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/jersey.webp')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Polos" data-en="Polo Shirts">Polos</h2>
+							<p data-es="Confeccionados en algodón Pima peruano, ideales para uso corporativo, deportivo y casual. Disponibles en múltiples colores y tallas." data-en="Made from Peruvian Pima cotton, ideal for corporate, sports and casual wear. Available in multiple colors and sizes.">Confeccionados en algodón Pima peruano, ideales para uso corporativo, deportivo y casual. Disponibles en múltiples colores y tallas.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Material" data-en="Material">Material</span>
+							<span class="spec-value">Algodón Pima 100%</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Gramaje" data-en="GSM">Gramaje</span>
+							<span class="spec-value">160–200 GSM</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Personalización" data-en="Customization">Personalización</span>
+							<span class="spec-value" data-es="Bordado y estampado" data-en="Embroidery & printing">Bordado y estampado</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categoría: Poleras -->
+				<div class="category-section" id="poleras">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/p4.png')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Poleras" data-en="T-shirts">Poleras</h2>
+							<p data-es="Camisetas de manga corta y larga en jersey, ideales para uniformes, merchandising y ropa corporativa con estampados de alta durabilidad." data-en="Short and long sleeve jersey t-shirts, ideal for uniforms, merchandising and corporate apparel with highly durable prints.">Camisetas de manga corta y larga en jersey, ideales para uniformes, merchandising y ropa corporativa con estampados de alta durabilidad.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Material" data-en="Material">Material</span>
+							<span class="spec-value">Jersey 100% algodón</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Técnicas" data-en="Techniques">Técnicas</span>
+							<span class="spec-value" data-es="Serigrafía, vinilo, DTF" data-en="Screen printing, vinyl, DTF">Serigrafía, vinilo, DTF</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Colores" data-en="Colors">Colores</span>
+							<span class="spec-value" data-es="Amplia paleta disponible" data-en="Wide palette available">Amplia paleta disponible</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categoría: Shorts -->
+				<div class="category-section" id="shorts">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/p5.png')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Shorts" data-en="Shorts">Shorts</h2>
+							<p data-es="Shorts deportivos y casuales con telas de secado rápido, perfectos para uniformes deportivos, gimnasios y equipos institucionales." data-en="Sports and casual shorts with quick-dry fabrics, perfect for sports uniforms, gyms and institutional teams.">Shorts deportivos y casuales con telas de secado rápido, perfectos para uniformes deportivos, gimnasios y equipos institucionales.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Telas" data-en="Fabrics">Telas</span>
+							<span class="spec-value">Dry-fit, poliéster, algodón</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Uso" data-en="Use">Uso</span>
+							<span class="spec-value" data-es="Deportivo y casual" data-en="Sports & casual">Deportivo y casual</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="MOQ" data-en="MOQ">MOQ</span>
+							<span class="spec-value">250 unidades</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categoría: Delantales -->
+				<div class="category-section" id="delantales">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/p6.png')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Delantales" data-en="Aprons">Delantales</h2>
+							<p data-es="Delantales industriales y comerciales resistentes, diseñados para gastronomía, laboratorios, manufactura y limpieza profesional." data-en="Resistant industrial and commercial aprons, designed for gastronomy, laboratories, manufacturing and professional cleaning.">Delantales industriales y comerciales resistentes, diseñados para gastronomía, laboratorios, manufactura y limpieza profesional.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Materiales" data-en="Materials">Materiales</span>
+							<span class="spec-value">Drill, lona, gabardina</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Bolsillos" data-en="Pockets">Bolsillos</span>
+							<span class="spec-value" data-es="Múltiples configuraciones" data-en="Multiple configurations">Múltiples configuraciones</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Durabilidad" data-en="Durability">Durabilidad</span>
+							<span class="spec-value" data-es="Alta resistencia" data-en="High strength">Alta resistencia</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categoría: Ropa Industrial -->
+				<div class="category-section" id="ropa-industrial">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/p2.jpg')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Ropa Industrial" data-en="Industrial Clothing">Ropa Industrial</h2>
+							<p data-es="Uniformes completos para industrias: pantalones cargo, chalecos de seguridad, chaquetas reforzadas y más, cumpliendo estándares de seguridad." data-en="Complete uniforms for industries: cargo pants, safety vests, reinforced jackets and more, meeting safety standards.">Uniformes completos para industrias: pantalones cargo, chalecos de seguridad, chaquetas reforzadas y más, cumpliendo estándares de seguridad.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Protección" data-en="Protection">Protección</span>
+							<span class="spec-value" data-es="Refuerzos y cintas reflectivas" data-en="Reinforcements & reflective tape">Refuerzos y cintas reflectivas</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Normas" data-en="Standards">Normas</span>
+							<span class="spec-value" data-es="Cumplimiento industrial" data-en="Industrial compliance">Cumplimiento industrial</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Pedidos" data-en="Orders">Pedidos</span>
+							<span class="spec-value" data-es="Volúmenes corporativos" data-en="Corporate volumes">Volúmenes corporativos</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Categoría: Personalizados -->
+				<div class="category-section" id="personalizados">
+					<div class="category-banner" style="--category-image:url('/confecciones_polcyr/img/p1.jpg')">
+						<div class="category-overlay"></div>
+						<div class="category-content">
+							<h2 data-es="Productos Personalizados" data-en="Custom Products">Productos Personalizados</h2>
+							<p data-es="Diseñamos y fabricamos prendas a medida según tus especificaciones: tallas especiales, diseños exclusivos, combinaciones de telas y acabados únicos." data-en="We design and manufacture custom garments to your specifications: special sizes, exclusive designs, fabric combinations and unique finishes.">Diseñamos y fabricamos prendas a medida según tus especificaciones: tallas especiales, diseños exclusivos, combinaciones de telas y acabados únicos.</p>
+						</div>
+					</div>
+					<div class="category-specs">
+						<div class="spec-item">
+							<span class="spec-label" data-es="Flexibilidad" data-en="Flexibility">Flexibilidad</span>
+							<span class="spec-value" data-es="100% personalizable" data-en="100% customizable">100% personalizable</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Asesoría" data-en="Consulting">Asesoría</span>
+							<span class="spec-value" data-es="Diseño y desarrollo" data-en="Design & development">Diseño y desarrollo</span>
+						</div>
+						<div class="spec-item">
+							<span class="spec-label" data-es="Lead time" data-en="Lead time">Lead time</span>
+							<span class="spec-value">30–45 días</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2 data-es="¿Necesitas un producto a medida?" data-en="Need a custom product?">¿Necesitas un producto a medida?</h2>
+					<p data-es="Trabajamos con diseños personalizados y podemos adaptar cualquier producto a tus necesidades específicas" data-en="We work with custom designs and can adapt any product to your specific needs">Trabajamos con diseños personalizados y podemos adaptar cualquier producto a tus necesidades específicas</p>
+					<a href="/confecciones_polcyr/contacto" class="cta-button" data-es="Solicitar Cotización" data-en="Request Quote">Solicitar Cotización</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<Footer />
+</Layout>
+
+<style is:global>
+	:root {
+		--brand-blue: #0649a7;
+		--brand-blue-light: #1565d8;
+		--text-dark: #1e293b;
+		--text-gray: #475569;
+		--text-light: #64748b;
+		--bg-light: #f8fafc;
+		--border-light: #e2e8f0;
+	}
+
+	.products-page { margin-top: 80px; }
+	.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+	/* Filter Section */
+	.filter-section {
+		padding: 2.5rem 0;
+		background: white;
+		border-bottom: 1px solid var(--border-light);
+		position: sticky;
+		top: 70px;
+		z-index: 10;
+		backdrop-filter: blur(6px);
+	}
+
+	.filter-buttons {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.filter-btn {
+		background: transparent;
+		border: 2px solid var(--border-light);
+		color: var(--text-gray);
+		padding: 0.75rem 1.5rem;
+		border-radius: 999px;
+		font-size: 0.95rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	.filter-btn:hover {
+		background: var(--brand-blue);
+		border-color: var(--brand-blue);
+		color: white;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(6, 73, 167, 0.25);
+	}
+
+	/* Products Showcase con grid background */
+	.products-showcase {
+		padding: 5rem 0;
+		background: linear-gradient(180deg, #fff, var(--bg-light));
+		position: relative;
+	}
+
+	/* Patrón cuadriculado */
+	.products-showcase::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-image: 
+			linear-gradient(90deg, rgba(6,73,167,0.04) 2px, transparent 2px),
+			linear-gradient(180deg, rgba(6,73,167,0.04) 2px, transparent 2px);
+		background-size: 50px 50px;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.products-showcase > .container { position: relative; z-index: 1; }
+
+	/* Category Section */
+	.category-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 150px;
+		opacity: 0;
+		transform: translateY(30px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+	}
+
+	.category-section.visible { opacity: 1; transform: translateY(0); }
+
+	.category-banner {
+		position: relative;
+		height: 400px;
+		border-radius: 20px;
+		overflow: hidden;
+		background: var(--category-image) no-repeat center center / cover;
+		box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+		margin-bottom: 2rem;
+	}
+
+	.category-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(6,73,167,0.9), rgba(15,87,191,0.75));
+	}
+
+	.category-content {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 3rem;
+		color: white;
+		z-index: 1;
+	}
+
+	.category-content h2 {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 700;
+		margin: 0 0 1rem;
+		text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+	}
+
+	.category-content p {
+		font-size: 1.2rem;
+		line-height: 1.7;
+		max-width: 600px;
+		margin: 0;
+		opacity: 0.95;
+		text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+	}
+
+	/* Specs */
+	.category-specs {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.spec-item {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 16px;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+		border-left: 4px solid var(--brand-blue);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.spec-label {
+		font-size: 0.9rem;
+		color: var(--text-light);
+		font-weight: 500;
+	}
+
+	.spec-value {
+		font-size: 1.1rem;
+		color: var(--text-dark);
+		font-weight: 600;
+	}
+
+	/* CTA Section */
+	.cta-section {
+		padding: 5rem 2rem;
+		background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-light));
+		color: white;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.cta-section::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -20%;
+		width: 600px;
+		height: 600px;
+		background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+		border-radius: 50%;
+	}
+
+	.cta-content { position: relative; z-index: 1; text-align: center; }
+	.cta-content h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin: 0 0 1rem; }
+	.cta-content p { font-size: 1.15rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.95; }
+	.cta-button {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		border-radius: 999px;
+		background: #fff;
+		color: var(--brand-blue);
+		font-weight: 700;
+		font-size: 1.1rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	}
+	.cta-button:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		.filter-buttons { gap: 0.5rem; }
+		.filter-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+		.category-banner { height: 300px; }
+		.category-content { padding: 2rem; }
+		.category-specs { grid-template-columns: 1fr; }
+	}
+
+	@media (max-width: 480px) {
+		.filter-buttons { justify-content: flex-start; overflow-x: auto; padding-bottom: 0.5rem; }
+		.filter-btn { white-space: nowrap; flex-shrink: 0; }
+		.category-banner { height: 250px; }
+	}
+</style>
+
+<script is:inline>
+	function translateProductsPage() {
+		const language = localStorage.getItem('language') || 'es';
+		document.querySelectorAll('[data-es]').forEach(element => {
+			const esText = element.getAttribute('data-es');
+			const enText = element.getAttribute('data-en');
+			if (language === 'es' && esText) element.textContent = esText;
+			else if (language === 'en' && enText) element.textContent = enText;
+		});
+	}
+
+	function initCategoryAnimations() {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry, index) => {
+				if (entry.isIntersecting) {
+					setTimeout(() => {
+						entry.target.classList.add('visible');
+					}, index * 100);
+				}
+			});
+		}, { threshold: 0.15 });
+
+		document.querySelectorAll('.category-section').forEach(section => {
+			observer.observe(section);
+		});
+	}
+
+	window.addEventListener('languageChanged', translateProductsPage);
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
+			translateProductsPage();
+			initCategoryAnimations();
+		});
+	} else {
+		translateProductsPage();
+		initCategoryAnimations();
+	}
+</script>
