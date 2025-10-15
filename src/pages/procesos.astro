@@ -9,7 +9,7 @@ import "../styles/style.css";
 	<Header />
 
 	<main class="processes-page">
-		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p3.jpg'); --page-header-overlay:0.85">
+		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p3.jpg')">
 			<div class="page-header__inner">
 				<h1 class="page-header__title" data-es="Nuestros Procesos" data-en="Our Processes">Nuestros Procesos</h1>
 				<p class="page-header__subtitle" data-es="Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda." data-en="Learn about each stage of our production process, designed to ensure quality and precision in every garment.">Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda.</p>
@@ -18,105 +18,113 @@ import "../styles/style.css";
 
 		<section class="timeline-section">
 			<div class="container">
+				<div class="section-intro">
+					<h2 data-es="Nuestro Proceso Productivo" data-en="Our Production Process">Nuestro Proceso Productivo</h2>
+					<p data-es="Cada etapa está diseñada para garantizar máxima calidad, eficiencia y atención al detalle en todas las prendas que producimos." data-en="Each stage is designed to ensure maximum quality, efficiency and attention to detail in all the garments we produce.">Cada etapa está diseñada para garantizar máxima calidad, eficiencia y atención al detalle en todas las prendas que producimos.</p>
+				</div>
+
 				<div class="timeline">
-					<!-- 01 -->
-					<div class="timeline-item" data-step="01">
-						<div class="timeline-icon">
-							<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l-8 8h5v10h6V10h5z"/></svg>
-						</div>
-						<div class="timeline-content">
+					<!-- Step 01 -->
+					<div class="timeline-item" data-step="1">
+						<div class="timeline-marker">
 							<div class="step-number">01</div>
-							<h3 data-es="Tejedora – Producción de telas" data-en="Weaving – Fabric Production">Tejedora – Producción de telas</h3>
-							<p data-es="Fabricamos telas resistentes y de alta calidad, adaptadas a cada diseño. Nuestras tejedoras garantizan materiales uniformes, duraderos y listos para las siguientes etapas de producción."
-							   data-en="We manufacture strong, high-quality fabrics adapted to each design. Our weaving machines ensure uniform, durable materials ready for the next stages.">
-								Fabricamos telas resistentes y de alta calidad, adaptadas a cada diseño. Nuestras tejedoras garantizan materiales uniformes, duraderos y listos para las siguientes etapas de producción.
-							</p>
+							<div class="icon-badge">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3l-6 6 2 2 7-7z"/></svg>
+							</div>
+						</div>
+						<div class="timeline-card">
+							<div class="card-header">
+								<h3 data-es="Tejedora – Producción de telas" data-en="Weaving – Fabric Production">Tejedora – Producción de telas</h3>
+								<span class="badge" data-es="Paso 1" data-en="Step 1">Paso 1</span>
+							</div>
+							<p data-es="Fabricamos telas resistentes y de alta calidad, adaptadas a cada diseño. Nuestras tejedoras garantizan materiales uniformes, duraderos y listos para las siguientes etapas de producción." data-en="We manufacture strong, high-quality fabrics adapted to each design. Our weaving machines ensure uniform, durable materials ready for the next stages.">Fabricamos telas resistentes y de alta calidad, adaptadas a cada diseño. Nuestras tejedoras garantizan materiales uniformes, duraderos y listos para las siguientes etapas de producción.</p>
 							<div class="process-image">
 								<img src="/confecciones_polcyr/img/p1.jpg" alt="Tejedora Industrial" />
+								<div class="image-overlay"><span data-es="Tejeduría Industrial" data-en="Industrial Weaving">Tejeduría Industrial</span></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 02 -->
-					<div class="timeline-item" data-step="02">
-						<div class="timeline-icon">
-							<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3l-6 6 2 2 7-7zM6 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-						</div>
-						<div class="timeline-content">
+					<!-- Step 02 -->
+					<div class="timeline-item" data-step="2">
+						<div class="timeline-marker">
 							<div class="step-number">02</div>
-							<h3 data-es="Corte – Preparación de piezas" data-en="Cutting – Piece Preparation">Corte – Preparación de piezas</h3>
-							<p data-es="Cada pieza se corta con precisión siguiendo los patrones establecidos, asegurando exactitud en tamaños y formas. Este paso es esencial para mantener la consistencia y calidad de las prendas finales."
-							   data-en="Each piece is precisely cut following established patterns, ensuring accuracy in sizes and shapes. This step is essential to maintain consistency and quality in the final garments.">
-								Cada pieza se corta con precisión siguiendo los patrones establecidos, asegurando exactitud en tamaños y formas. Este paso es esencial para mantener la consistencia y calidad de las prendas finales.
-							</p>
+							<div class="icon-badge">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 3.5L18 5l1.5 1.5L21 5zM11.5 9.5L2 19v3h3l9.5-9.5z"/></svg>
+							</div>
+						</div>
+						<div class="timeline-card">
+							<div class="card-header">
+								<h3 data-es="Corte – Preparación de piezas" data-en="Cutting – Piece Preparation">Corte – Preparación de piezas</h3>
+								<span class="badge" data-es="Paso 2" data-en="Step 2">Paso 2</span>
+							</div>
+							<p data-es="Cada pieza se corta con precisión siguiendo los patrones establecidos, asegurando exactitud en tamaños y formas. Este paso es esencial para mantener la consistencia y calidad de las prendas finales." data-en="Each piece is precisely cut following established patterns, ensuring accuracy in sizes and shapes. This step is essential to maintain consistency and quality in the final garments.">Cada pieza se corta con precisión siguiendo los patrones establecidos, asegurando exactitud en tamaños y formas. Este paso es esencial para mantener la consistencia y calidad de las prendas finales.</p>
 							<div class="process-image">
 								<img src="/confecciones_polcyr/img/tendedora.webp" alt="Corte de piezas" />
+								<div class="image-overlay"><span data-es="Corte de Precisión" data-en="Precision Cutting">Corte de Precisión</span></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 03 -->
-					<div class="timeline-item" data-step="03">
-						<div class="timeline-icon">
-							<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>
-						</div>
-						<div class="timeline-content">
+					<!-- Step 03 -->
+					<div class="timeline-item" data-step="3">
+						<div class="timeline-marker">
 							<div class="step-number">03</div>
-							<h3 data-es="Confección – Ensamble de prendas" data-en="Sewing – Garment Assembly">Confección – Ensamble de prendas</h3>
-							<p data-es="Combinamos la experiencia de nuestro equipo con maquinaria especializada para ensamblar cada prenda. Costuras y detalles se revisan con cuidado para garantizar acabados de alta calidad."
-							   data-en="We combine our team's experience with specialized machinery to assemble each garment. Seams and details are carefully reviewed to ensure high-quality finishes.">
-								Combinamos la experiencia de nuestro equipo con maquinaria especializada para ensamblar cada prenda. Costuras y detalles se revisan con cuidado para garantizar acabados de alta calidad.
-							</p>
+							<div class="icon-badge">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+							</div>
+						</div>
+						<div class="timeline-card">
+							<div class="card-header">
+								<h3 data-es="Confección – Ensamble de prendas" data-en="Sewing – Garment Assembly">Confección – Ensamble de prendas</h3>
+								<span class="badge" data-es="Paso 3" data-en="Step 3">Paso 3</span>
+							</div>
+							<p data-es="Combinamos la experiencia de nuestro equipo con maquinaria especializada para ensamblar cada prenda. Costuras y detalles se revisan con cuidado para garantizar acabados de alta calidad." data-en="We combine our team's experience with specialized machinery to assemble each garment. Seams and details are carefully reviewed to ensure high-quality finishes.">Combinamos la experiencia de nuestro equipo con maquinaria especializada para ensamblar cada prenda. Costuras y detalles se revisan con cuidado para garantizar acabados de alta calidad.</p>
 							<div class="process-image">
 								<img src="/confecciones_polcyr/img/tendedora2.webp" alt="Confección de prendas" />
+								<div class="image-overlay"><span data-es="Confección Especializada" data-en="Specialized Sewing">Confección Especializada</span></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 04 -->
-					<div class="timeline-item" data-step="04">
-						<div class="timeline-icon">
-							<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
-						</div>
-						<div class="timeline-content">
+					<!-- Step 04 -->
+					<div class="timeline-item" data-step="4">
+						<div class="timeline-marker">
 							<div class="step-number">04</div>
-							<h3 data-es="Estampado – Personalización" data-en="Printing – Customization">Estampado – Personalización</h3>
-							<p data-es="Realizamos estampados nítidos y duraderos utilizando equipos modernos. Cada prenda se personaliza con precisión, asegurando que los colores, logos y diseños corporativos reflejen la identidad de la marca de manera uniforme y consistente."
-							   data-en="We make sharp and durable prints using modern equipment. Each garment is customized with precision to ensure colors, logos and corporate designs consistently reflect the brand identity.">
-								Realizamos estampados nítidos y duraderos utilizando equipos modernos. Cada prenda se personaliza con precisión, asegurando que los colores, logos y diseños corporativos reflejen la identidad de la marca de manera uniforme y consistente.
-							</p>
-							<div class="process-image">
-								<img src="/confecciones_polcyr/img/p2.jpg" alt="Estampadora textil industrial" />
+							<div class="icon-badge">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
 							</div>
-							<div class="equipment-note">
-								<small data-es="Estampadora textil industrial para servicios de manufactura en planta."
-									   data-en="Industrial textile printer for in-plant manufacturing services.">
-									Estampadora textil industrial para servicios de manufactura en planta.
-								</small>
+						</div>
+						<div class="timeline-card">
+							<div class="card-header">
+								<h3 data-es="Estampado – Personalización" data-en="Printing – Customization">Estampado – Personalización</h3>
+								<span class="badge" data-es="Paso 4" data-en="Step 4">Paso 4</span>
+							</div>
+							<p data-es="Realizamos estampados nítidos y duraderos utilizando equipos modernos. Cada prenda se personaliza con precisión, asegurando que los colores, logos y diseños corporativos reflejen la identidad de la marca de manera uniforme y consistente." data-en="We make sharp and durable prints using modern equipment. Each garment is customized with precision to ensure colors, logos and corporate designs consistently reflect the brand identity.">Realizamos estampados nítidos y duraderos utilizando equipos modernos. Cada prenda se personaliza con precisión, asegurando que los colores, logos y diseños corporativos reflejen la identidad de la marca de manera uniforme y consistente.</p>
+							<div class="process-image">
+								<img src="/confecciones_polcyr/img/p2.jpg" alt="Estampadora textil" />
+								<div class="image-overlay"><span data-es="Estampado Digital" data-en="Digital Printing">Estampado Digital</span></div>
 							</div>
 						</div>
 					</div>
 
-					<!-- 05 -->
-					<div class="timeline-item" data-step="05">
-						<div class="timeline-icon">
-							<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-						</div>
-						<div class="timeline-content">
+					<!-- Step 05 -->
+					<div class="timeline-item" data-step="5">
+						<div class="timeline-marker">
 							<div class="step-number">05</div>
-							<h3 data-es="Horno de secado – Acabado final" data-en="Drying Oven – Final Finish">Horno de secado – Acabado final</h3>
-							<p data-es="El secado controlado permite que cada prenda mantenga su textura, color y forma. Esta etapa asegura un acabado uniforme y una presentación impecable antes de la entrega final."
-							   data-en="Controlled drying allows each garment to maintain its texture, color and shape. This stage ensures a uniform finish and impeccable presentation before delivery.">
-								El secado controlado permite que cada prenda mantenga su textura, color y forma. Esta etapa asegura un acabado uniforme y una presentación impecable antes de la entrega final.
-							</p>
-							<div class="process-image">
-								<img src="/confecciones_polcyr/img/p3.jpg" alt="Horno de secado industrial" />
+							<div class="icon-badge">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
 							</div>
-							<div class="equipment-note">
-								<small data-es="Horno de secado industrial de alta eficiencia para procesos de curado y acabado textil."
-									   data-en="High-efficiency industrial drying oven for textile curing and finishing.">
-									Horno de secado industrial de alta eficiencia para procesos de curado y acabado textil.
-								</small>
+						</div>
+						<div class="timeline-card">
+							<div class="card-header">
+								<h3 data-es="Horno de secado – Acabado final" data-en="Drying Oven – Final Finish">Horno de secado – Acabado final</h3>
+								<span class="badge badge-success" data-es="Finalización" data-en="Completion">Finalización</span>
+							</div>
+							<p data-es="El secado controlado permite que cada prenda mantenga su textura, color y forma. Esta etapa asegura un acabado uniforme y una presentación impecable antes de la entrega final." data-en="Controlled drying allows each garment to maintain its texture, color and shape. This stage ensures a uniform finish and impeccable presentation before delivery.">El secado controlado permite que cada prenda mantenga su textura, color y forma. Esta etapa asegura un acabado uniforme y una presentación impecable antes de la entrega final.</p>
+							<div class="process-image">
+								<img src="/confecciones_polcyr/img/p3.jpg" alt="Horno de secado" />
+								<div class="image-overlay"><span data-es="Secado y Acabado" data-en="Drying & Finishing">Secado y Acabado</span></div>
 							</div>
 						</div>
 					</div>
@@ -142,145 +150,184 @@ import "../styles/style.css";
 	<Footer />
 </Layout>
 
-<style>
-	:root {
-		--brand-blue: #0649a7;
-		--brand-blue-light: #1565d8;
-		--text-dark: #1e293b;
-		--text-gray: #475569;
-		--text-light: #64748b;
-		--bg-light: #f8fafc;
-		--timeline-line: #cbd5e1;
+<style is:global>
+	/* HARD RESET: forzar estilos de proceso con !important si es necesario */
+	.processes-page { margin-top: 80px !important; }
+	.processes-page .container { max-width: 960px !important; margin: 0 auto !important; padding: 0 2rem !important; } /* reducir de 1200px a 960px */
+
+	/* Header mejorado */
+	.processes-page .page-header { position: relative !important; padding: 6rem 2rem !important; overflow: hidden !important; }
+	.processes-page .page-header::before {
+		content: '' !important; position: absolute !important; inset: 0 !important;
+		background: linear-gradient(135deg, rgba(6,73,167,0.95), rgba(15,87,191,0.85)) !important;
+		z-index: 0 !important;
+	}
+	.processes-page .page-header::after {
+		content: '' !important; position: absolute !important; inset: 0 !important;
+		background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), transparent 60%) !important;
+		z-index: 0 !important;
+	}
+	.processes-page .page-header__inner { position: relative !important; z-index: 1 !important; }
+
+	/* Intro */
+	.processes-page .section-intro { text-align: center !important; max-width: 800px !important; margin: 0 auto 5rem !important; }
+	.processes-page .section-intro h2 {
+		font-size: clamp(2rem, 5vw, 2.8rem) !important; color: #0649a7 !important;
+		margin: 0 0 1rem !important; font-weight: 700 !important;
+	}
+	.processes-page .section-intro p { font-size: 1.15rem !important; color: #475569 !important; line-height: 1.7 !important; }
+
+	.processes-page .timeline-section { 
+		padding: 5rem 0 !important; 
+		background: linear-gradient(180deg, #fff, #f8fafc) !important;
+		position: relative !important;
 	}
 
-	.processes-page { margin-top: 80px; }
-	.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-	.page-header {
-		position: relative;
-		padding: 6rem 2rem;
-		color: #fff;
-		text-align: center;
-		background: var(--brand-blue) no-repeat center/cover;
-	}
-	.page-header__inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
-	.page-header__title {
-		font-size: clamp(2.5rem, 6vw, 3.5rem);
-		margin: 0 0 1rem 0;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-	}
-	.page-header__subtitle {
-		font-size: 1.2rem;
-		opacity: .95;
-		margin: 0;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	/* Patrón cuadriculado más visible */
+	.processes-page .timeline-section::before {
+		content: "" !important;
+		position: absolute !important;
+		inset: 0 !important;
+		background-image: 
+			linear-gradient(90deg, rgba(6,73,167,0.08) 2px, transparent 2px),
+			linear-gradient(180deg, rgba(6,73,167,0.08) 2px, transparent 2px) !important;
+		background-size: 50px 50px !important;
+		pointer-events: none !important;
+		z-index: 0 !important;
 	}
 
-	.timeline-section { padding: 5rem 0; background: var(--bg-light); }
-	.timeline { position: relative; max-width: 1100px; margin: 0 auto; }
-	.timeline::before {
-		content: '';
-		position: absolute; left: 50%; top: 0; bottom: 0;
-		width: 4px; background: var(--timeline-line); transform: translateX(-50%);
+	.processes-page .timeline { 
+		position: relative !important; 
+		display: flex !important; 
+		flex-direction: column !important; 
+		gap: 3.5rem !important;
+		z-index: 1 !important; /* asegurar que esté encima del grid */
 	}
 
-	.timeline-item { position: relative; margin-bottom: 3.5rem; opacity: 0; transform: translateY(24px); transition: all .6s ease; }
-	.timeline-item.visible { opacity: 1; transform: translateY(0); }
+	.processes-page .timeline-item {
+		display: grid !important; grid-template-columns: auto 1fr !important; gap: 2rem !important; align-items: start !important;
+		opacity: 0 !important; transform: translateY(24px) !important; transition: all 0.6s cubic-bezier(.25,.8,.25,1) !important;
+	}
+	.processes-page .timeline-item.visible { opacity: 1 !important; transform: translateY(0) !important; }
 
-	.timeline-item:nth-child(odd) .timeline-content { margin-right: 52%; text-align: right; }
-	.timeline-item:nth-child(even) .timeline-content { margin-left: 52%; text-align: left; }
-
-	.timeline-icon {
-		position: absolute; left: 50%; top: .25rem; transform: translateX(-50%);
-		width: 64px; height: 64px; border-radius: 50%;
-		background: var(--brand-blue); color: #fff;
-		display: grid; place-items: center; z-index: 2;
-		box-shadow: 0 0 0 8px var(--bg-light), 0 10px 28px rgba(6,73,167,.25);
+	/* Marker */
+	.processes-page .timeline-marker {
+		position: relative !important; display: flex !important; flex-direction: column !important;
+		align-items: center !important; gap: 0.75rem !important; z-index: 2 !important;
+	}
+	.processes-page .step-number {
+		width: 52px !important; height: 52px !important; border-radius: 50% !important; display: grid !important; place-items: center !important;
+		background: linear-gradient(135deg, #0649a7, #1565d8) !important;
+		color: #fff !important; font-weight: 800 !important; font-size: 1.15rem !important;
+		box-shadow: 0 8px 24px rgba(6,73,167,0.35), 0 0 0 6px #fff !important;
+	}
+	.processes-page .icon-badge {
+		width: 40px !important; height: 40px !important; border-radius: 50% !important; background: #fff !important; color: #0649a7 !important;
+		display: grid !important; place-items: center !important; box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
 	}
 
-	.timeline-content {
-		background: #fff; border-radius: 16px; padding: 2.5rem;
-		box-shadow: 0 8px 24px rgba(0,0,0,.08); position: relative;
+	/* Card */
+	.processes-page .timeline-card {
+		background: #fff !important; border-radius: 20px !important; padding: 2.25rem !important; position: relative !important;
+		box-shadow: 0 8px 32px rgba(0,0,0,0.06) !important; border: 1px solid rgba(6,73,167,0.08) !important;
+		transition: all 0.3s ease !important;
 	}
-	.timeline-item:hover .timeline-content { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
-
-	.timeline-item:nth-child(odd) .timeline-content::after {
-		content: ''; position: absolute; top: 1.5rem; right: -12px;
-		border-left: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent;
+	.processes-page .timeline-item:hover .timeline-card {
+		transform: translateY(-4px) !important; box-shadow: 0 16px 48px rgba(0,0,0,0.12) !important;
 	}
-	.timeline-item:nth-child(even) .timeline-content::after {
-		content: ''; position: absolute; top: 1.5rem; left: -12px;
-		border-right: 12px solid #fff; border-top: 12px solid transparent; border-bottom: 12px solid transparent;
+	.processes-page .timeline-card::before {
+		content: '' !important; position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; height: 4px !important;
+		background: linear-gradient(90deg, #0649a7, #1565d8) !important;
+		border-radius: 20px 20px 0 0 !important;
 	}
 
-	.step-number {
-		width: 40px; height: 40px; border-radius: 999px; display: grid; place-items: center;
-		background: var(--brand-blue); color: #fff; font-weight: 700; margin: 0 0 0.75rem auto;
+	.processes-page .card-header { display: flex !important; justify-content: space-between !important; align-items: center !important; margin-bottom: 1rem !important; }
+	.processes-page .card-header h3 { margin: 0 !important; font-size: 1.5rem !important; color: #1e293b !important; font-weight: 600 !important; }
+	.processes-page .badge {
+		display: inline-block !important; padding: 0.35rem 0.85rem !important; border-radius: 999px !important; font-size: 0.8rem !important; font-weight: 700 !important;
+		background: rgba(6,73,167,0.1) !important; color: #0649a7 !important;
 	}
-	.timeline-item:nth-child(even) .step-number { margin: 0 0 0.75rem 0; }
+	.processes-page .badge-success { background: rgba(16,185,129,0.1) !important; color: #10b981 !important; }
 
-	.timeline-content h3 { margin: 0 0 1rem 0; color: var(--text-dark); font-size: 1.6rem; }
-	.timeline-content p { margin: 0 0 1.5rem 0; color: var(--text-gray); line-height: 1.7; font-size: 1.05rem; }
+	.processes-page .timeline-card > p { margin: 0 0 1.5rem !important; color: #475569 !important; line-height: 1.7 !important; font-size: 1.05rem !important; }
 
-	.process-image { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.08); margin: 0.5rem 0 0.75rem; }
-	.process-image img { width: 100%; height: 380px; object-fit: cover; transition: transform .3s ease; }
-	.timeline-item:hover .process-image img { transform: scale(1.04); }
-
-	.equipment-note { background: #f1f5f9; border-left: 4px solid var(--brand-blue); padding: .75rem 1rem; border-radius: 8px; }
-	.equipment-note small { color: #475569; }
-
-	.cta-section { padding: 5rem 0; background: var(--brand-blue) color: #fff; }
-	.cta-content { text-align: center; max-width: 900px; margin: 0 auto; }
-	.cta-content h2 { margin: 0 0 1rem 0; font-size: 2rem; }
-	.cta-content p { margin: 0 0 1.5rem 0; opacity: .9; }
-	.cta-button {
-		display: inline-block; background: var(--brand-blue); color: #fff; padding: .9rem 2rem; border-radius: 999px;
-		text-decoration: none; font-weight: 600; box-shadow: 0 10px 28px rgba(6,73,167,.3); transition: transform .2s ease;
+	/* Imagen más alta */
+	.processes-page .process-image {
+		position: relative !important; border-radius: 12px !important; overflow: hidden !important; box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
 	}
-	.cta-button:hover { transform: translateY(-2px); }
+	.processes-page .process-image img { width: 100% !important; height: 420px !important; object-fit: cover !important; transition: transform 0.4s ease !important; } /* aumentar de 320px a 420px */
+	.processes-page .timeline-item:hover .process-image img { transform: scale(1.05) !important; }
 
+	.processes-page .image-overlay {
+		position: absolute !important; inset: 0 !important; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.75)) !important;
+		display: grid !important; place-items: end !important; padding: 1.25rem !important; opacity: 0 !important; transition: opacity 0.3s ease !important;
+	}
+	.processes-page .timeline-item:hover .image-overlay { opacity: 1 !important; }
+	.processes-page .image-overlay span { color: #fff !important; font-weight: 600 !important; font-size: 1.05rem !important; }
+
+	/* CTA */
+	.processes-page .cta-section {
+		padding: 5rem 2rem !important; background: linear-gradient(135deg, #0649a7, #1565d8) !important;
+		color: #fff !important; position: relative !important; overflow: hidden !important;
+	}
+	.processes-page .cta-section::before {
+		content: '' !important; position: absolute !important; top: -50% !important; right: -20% !important; width: 600px !important; height: 600px !important;
+		background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%) !important; border-radius: 50% !important;
+	}
+	.processes-page .cta-content { position: relative !important; z-index: 1 !important; text-align: center !important; }
+	.processes-page .cta-content h2 { font-size: clamp(2rem, 5vw, 2.8rem) !important; margin: 0 0 1rem !important; }
+	.processes-page .cta-content p { font-size: 1.15rem !important; max-width: 600px !important; margin: 0 auto 2rem !important; opacity: 0.95 !important; }
+	.processes-page .cta-button {
+		display: inline-block !important; padding: 1rem 2.5rem !important; border-radius: 999px !important; background: #fff !important; color: #0649a7 !important;
+		font-weight: 700 !important; font-size: 1.1rem !important; text-decoration: none !important; transition: all 0.3s ease !important;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+	}
+	.processes-page .cta-button:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 32px rgba(0,0,0,0.2) !important; }
+
+	/* Responsive */
 	@media (max-width: 768px) {
-		.container { padding: 0 1rem; }
-		.timeline { max-width: 100%; }
-		.timeline::before { left: 2rem; transform: none; }
-		.timeline-icon { left: 2rem; transform: none; width: 52px; height: 52px; }
-		.timeline-item:nth-child(odd) .timeline-content,
-		.timeline-item:nth-child(even) .timeline-content {
-			margin: 0 0 0 5rem; text-align: left;
-		}
-		.timeline-item:nth-child(odd) .timeline-content::after,
-		.timeline-item:nth-child(even) .timeline-content::after {
-			left: -12px; right: auto; border-left: none; border-right: 12px solid #fff;
-		}
-		.step-number { margin: 0 0 .75rem 0; }
-		.process-image img { height: 200px; }
+		.processes-page .timeline::before { left: 1.75rem !important; }
+		.processes-page .timeline-item { grid-template-columns: auto !important; gap: 1rem !important; }
+		.processes-page .timeline-marker { flex-direction: row !important; justify-self: start !important; }
+		.processes-page .step-number { width: 44px !important; height: 44px !important; }
+		.processes-page .icon-badge { width: 36px !important; height: 36px !important; }
+		.processes-page .process-image img { height: 280px !important; } /* mantener proporcional en móvil */
 	}
 </style>
 
 <script is:inline>
+	// Traductor para la página de procesos
 	function translateProcessesPage() {
 		const language = localStorage.getItem('language') || 'es';
-		document.querySelectorAll('[data-es]').forEach(el => {
-			const es = el.getAttribute('data-es');
-			const en = el.getAttribute('data-en');
-			if (language === 'es' && es) el.textContent = es;
-			else if (language === 'en' && en) el.textContent = en;
+		document.querySelectorAll('[data-es]').forEach(element => {
+			const esText = element.getAttribute('data-es');
+			const enText = element.getAttribute('data-en');
+			if (language === 'es' && esText) element.textContent = esText;
+			else if (language === 'en' && enText) element.textContent = enText;
 		});
 	}
 
+	// Animación de entrada al hacer scroll
 	function initTimelineAnimation() {
-		const items = document.querySelectorAll('.timeline-item');
-		const io = new IntersectionObserver(entries => {
-			entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry, index) => {
+				if (entry.isIntersecting) {
+					setTimeout(() => {
+						entry.target.classList.add('visible');
+					}, index * 150);
+				}
+			});
 		}, { threshold: 0.15 });
-		items.forEach((it, i) => {
-			it.style.transitionDelay = `${i * 0.12}s`;
-			io.observe(it);
+
+		document.querySelectorAll('.timeline-item').forEach(item => {
+			observer.observe(item);
 		});
 	}
 
+	// Escuchar cambios de idioma
 	window.addEventListener('languageChanged', translateProcessesPage);
 
+	// Inicializar cuando el DOM esté listo
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', () => {
 			translateProcessesPage();

@@ -908,6 +908,74 @@
   position: relative;
 }
 
+/* Banner en el hero principal */
+.hero-banner {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: clamp(110px, 22vw, 180px);
+  border-radius: 0;
+  overflow: hidden;
+  background-image: var(--hero-banner-image, url('/confecciones_polcyr/img/p1.jpg'));
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Overlay oscuro */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+  z-index: 1;
+}
+
+/* Patrón cuadriculado sutil */
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-banner__inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem 1.5rem;
+  z-index: 3; /* encima de los overlays */
+}
+
+.hero-banner__title {
+  margin: 0;
+  color: #fff;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  font-size: clamp(1.2rem, 4.5vw, 2.2rem);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: clamp(100px, 24vw, 150px);
+  }
+  .hero-banner::after {
+    background-size: 30px 30px; /* grid más pequeño en móvil */
+  }
+}
+
 /* Responsive breakpoints mejorados */
 @media (max-width: 1200px) {
   .why-grid {
