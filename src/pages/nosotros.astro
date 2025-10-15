@@ -2,12 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import "../styles/style.css";
 ---
 
 <Layout title="Sobre Nosotros - Confecciones POLCYR">
 	<Header />
 	
 	<main class="about-page">
+		<header class="page-header page-header--lg" style="--page-header-image:url('/confecciones_polcyr/img/nosotros3.webp'); --page-header-overlay:0.9">
+			<div class="page-header__inner">
+				<h1 class="page-header__title" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</h1>
+				<p class="page-header__subtitle" data-es="Más de 20 años fabricando prendas textiles de alta calidad" data-en="Over 20 years manufacturing high-quality textile garments">Más de 20 años fabricando prendas textiles de alta calidad</p>
+			</div>
+		</header>
 
 		<section class="who-we-are">
 			<div class="container">

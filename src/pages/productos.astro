@@ -2,21 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import "../styles/style.css";
 ---
 
 <Layout title="Productos - Confecciones POLCYR">
 	<Header />
 	
 	<main class="products-page">
-		<!-- Hero Section -->
-		<section class="products-hero">
-			<div class="products-hero-container">
-				<div class="products-hero-content">
-					<h1 data-es="Nuestros Productos" data-en="Our Products">Nuestros Productos</h1>
-					<p data-es="Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad" data-en="We manufacture a wide range of textile products with the best materials and the highest quality">Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad</p>
-				</div>
+		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p5.png'); --page-header-overlay:0.85">
+			<div class="page-header__inner">
+				<h1 class="page-header__title" data-es="Nuestros Productos" data-en="Our Products">Nuestros Productos</h1>
+				<p class="page-header__subtitle" data-es="Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad" data-en="We manufacture a wide range of textile products with the best materials and the highest quality">Fabricamos una amplia gama de productos textiles con los mejores materiales y la más alta calidad</p>
 			</div>
-		</section>
+		</header>
 
 
 		<!-- Products Grid -->

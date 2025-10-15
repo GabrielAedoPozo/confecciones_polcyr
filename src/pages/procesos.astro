@@ -2,21 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+import "../styles/style.css";
 ---
 
 <Layout title="Procesos - Confecciones POLCYR">
 	<Header />
 
 	<main class="processes-page">
-		<section class="processes-hero">
-			<div class="processes-hero-container">
-				<h1 data-es="Nuestros Procesos" data-en="Our Processes">Nuestros Procesos</h1>
-				<p data-es="Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda."
-				   data-en="Learn about each stage of our production process, designed to ensure quality and precision in every garment.">
-					Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda.
-				</p>
+		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p3.jpg'); --page-header-overlay:0.85">
+			<div class="page-header__inner">
+				<h1 class="page-header__title" data-es="Nuestros Procesos" data-en="Our Processes">Nuestros Procesos</h1>
+				<p class="page-header__subtitle" data-es="Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda." data-en="Learn about each stage of our production process, designed to ensure quality and precision in every garment.">Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda.</p>
 			</div>
-		</section>
+		</header>
 
 		<section class="timeline-section">
 			<div class="container">
@@ -158,15 +156,25 @@ import Footer from '../components/footer.astro';
 	.processes-page { margin-top: 80px; }
 	.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-	.processes-hero {
-		padding: 5rem 2rem;
-		background: var(--brand-blue);
+	.page-header {
+		position: relative;
+		padding: 6rem 2rem;
 		color: #fff;
 		text-align: center;
+		background: var(--brand-blue) no-repeat center/cover;
 	}
-	.processes-hero-container { max-width: 900px; margin: 0 auto; }
-	.processes-hero h1 { font-size: clamp(2.5rem, 6vw, 3.5rem); margin: 0 0 1rem 0; }
-	.processes-hero p { font-size: 1.2rem; opacity: .95; margin: 0; }
+	.page-header__inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+	.page-header__title {
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		margin: 0 0 1rem 0;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	}
+	.page-header__subtitle {
+		font-size: 1.2rem;
+		opacity: .95;
+		margin: 0;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+	}
 
 	.timeline-section { padding: 5rem 0; background: var(--bg-light); }
 	.timeline { position: relative; max-width: 1100px; margin: 0 auto; }
