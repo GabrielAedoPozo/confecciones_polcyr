@@ -4,16 +4,111 @@
   --ring: rgba(21, 101, 216, 0.35);
 }
 
-.hero {
-  padding: 1rem 1rem; /* Reducir padding superior */
-  padding-top: calc(1rem + 70px); /* Reducir compensación del navbar */
-  /* Animación de entrada */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.2s;
+/* REMOVER MÁRGENES GLOBALES */
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.hero .slider {
+.hero {
+  position: relative;
+  /* REMOVER TODOS LOS PADDINGS Y MÁRGENES */
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  background: #ffffff;
+  overflow: hidden;
+  /* REMOVER ANIMACIONES - todo estático */
+  opacity: 1;
+}
+
+/* REMOVER decoraciones */
+.hero::before,
+.hero::after {
+  display: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* OCULTAR SLIDER COMPLETAMENTE */
+.slider {
+  display: none !important;
+}
+
+/* HERO SIMPLE CON IMAGEN FULL SCREEN - SIN MÁRGENES ABSOLUTOS */
+.hero-banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* REMOVER transform que puede causar márgenes */
+  left: 0;
+  transform: none;
+  background-image: url('/confecciones_polcyr/img/modelo4.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  /* Asegurar que no haya márgenes negativos */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  /* Cambiar de center a flex-start para alinear a la izquierda */
+  justify-content: flex-start;
+}
+
+/* Overlay sutil para mejor legibilidad del texto */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Contenido de texto sobre la imagen */
+.hero-banner__content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  max-width: 800px;
+  padding: 0 2rem;
+  /* Posicionar definitivamente a la izquierda */
+  margin-left: clamp(2rem, 5vw, 4rem);
+}
+
+.hero-banner__title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.02em;
+  /* Convertir a mayúsculas */
+  text-transform: uppercase;
+}
+
+.hero-banner__title h1{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* REMOVER OVERLAYS PARA IMAGEN LIMPIA */
+.hero-overlay {
+  display: none;
+}
+
+.hero-content {
+  display: none;
+}
+
+/* Resto de estilos... */
+.slider {
   position: relative;
   max-width: 1400px; /* Aumentar el ancho máximo */
   margin: 0 auto;
@@ -552,7 +647,6 @@
 /* Sección Nuestra Tecnología */
 .technology-section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   margin-top: 4rem;
 }
 
@@ -676,7 +770,6 @@
 /* Sección Por qué POLCYR */
 .why-polcyr-section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   margin-top: 4rem;
 }
 
@@ -746,7 +839,6 @@
 /* Sección Clientes */
 .clients-section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   margin-top: 4rem;
 }
 
@@ -810,9 +902,11 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(6, 73, 167, 0.1);
+  /* Hacer completamente transparente */
+  background: transparent;
+
+  /* Borde más sutil */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
   padding: 0.5rem 0;
 }
@@ -842,11 +936,12 @@
   margin: 0;
   padding: 0;
   gap: 2rem;
+  background: transparent;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: #334155;
+  color: #ffffff;
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.5rem 1rem;
@@ -856,7 +951,7 @@
 }
 
 .nav-menu a:hover {
-  color: var(--brand-blue);
+  color: rgba(255, 255, 255, 0.815);
   background: rgba(6, 73, 167, 0.05);
 }
 
@@ -878,7 +973,7 @@
   transition: all 0.3s ease;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--brand-blue);
+  color: white;
 }
 
 .language-toggle:hover {
@@ -912,16 +1007,16 @@
 .hero-banner {
   position: relative;
   width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  min-height: clamp(110px, 22vw, 180px);
-  border-radius: 0;
-  overflow: hidden;
-  background-image: var(--hero-banner-image, url('/confecciones_polcyr/img/p1.jpg'));
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  transform: none;
+  background-image: url('/confecciones_polcyr/img/modelo4.webp');
   background-size: cover;
   background-position: center;
-  margin: 0;
-  box-shadow: none;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 /* Overlay oscuro */
@@ -957,22 +1052,44 @@
 
 .hero-banner__title {
   margin: 0;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.89);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
   text-align: center;
-  font-size: clamp(1.2rem, 4.5vw, 2.2rem);
+  font-size: 3rem;
   text-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 
 /* Ajustes responsive */
 @media (max-width: 768px) {
-  .hero-banner {
-    min-height: clamp(100px, 24vw, 150px);
+  .hero {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
   }
-  .hero-banner::after {
-    background-size: 30px 30px; /* grid más pequeño en móvil */
+
+  .hero-banner {
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    transform: none;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  /* OCULTAR CONTENIDO MÓVIL TAMBIÉN */
+  .hero-mobile-content {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 100vh;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
   }
 }
 
@@ -1052,7 +1169,7 @@
     background: rgba(6, 73, 167, 0.05);
   }
 
-  /* Ocultar slider completo en móvil */
+  /* OCULTAR SLIDER COMPLETO EN MÓVIL */
   .hero .slider {
     display: none;
   }

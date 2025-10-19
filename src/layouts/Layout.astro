@@ -9,7 +9,7 @@ import '@fontsource/onest/800.css';
 
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -17,12 +17,12 @@ import '@fontsource/onest/800.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Confecciones Polcyr</title>
 	</head>
-	<body>
+	<body style="margin: 0; padding: 0; overflow-x: hidden;">
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 
 	html{
 		scroll-behavior: smooth;
@@ -30,6 +30,18 @@ import '@fontsource/onest/800.css';
 
 	body {
 		font-family: 'Onest', sans-serif;
+		overflow-x: hidden;
+	}
+
+	/* ASEGURAR QUE NO HAYA MÁRGENES GLOBALES */
+	* {
+		box-sizing: border-box;
+	}
+	
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
 		overflow-x: hidden;
 	}
 </style>
