@@ -648,6 +648,8 @@ body {
 .technology-section {
   padding: 5rem 2rem;
   margin-top: 4rem;
+  opacity: 1;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .technology-container {
@@ -658,13 +660,15 @@ body {
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+  opacity: 1;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .section-header h2 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   color: var(--brand-blue);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.1;
 }
 
@@ -688,9 +692,9 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  opacity: 1;
+  transform: none;
+  animation: slideInUp 0.6s ease forwards;
 }
 
 .tech-card:hover {
@@ -702,6 +706,10 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.tech-card:nth-child(1) { animation-delay: 0.2s; }
+.tech-card:nth-child(2) { animation-delay: 0.4s; }
+.tech-card:nth-child(3) { animation-delay: 0.6s; }
 
 .tech-image {
   position: relative;
@@ -771,6 +779,8 @@ body {
 .why-polcyr-section {
   padding: 5rem 2rem;
   margin-top: 4rem;
+  opacity: 1;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .why-polcyr-container {
@@ -793,9 +803,9 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-top: 4px solid var(--brand-blue);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  opacity: 1;
+  transform: none;
+  animation: slideInUp 0.6s ease forwards;
 }
 
 .why-card:hover {
@@ -807,6 +817,13 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.why-card:nth-child(1) { animation-delay: 0.2s; }
+.why-card:nth-child(2) { animation-delay: 0.3s; }
+.why-card:nth-child(3) { animation-delay: 0.4s; }
+.why-card:nth-child(4) { animation-delay: 0.5s; }
+.why-card:nth-child(5) { animation-delay: 0.6s; }
+.why-card:nth-child(6) { animation-delay: 0.7s; }
 
 .why-icon {
   width: clamp(60px, 15vw, 70px);
@@ -909,6 +926,26 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
   padding: 0.5rem 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header al salir del hero: fondo blanco */
+.site-header.scrolled {
+  background-color: var(--brand-blue);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(6, 73, 167, 0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+/* Links celestes y sin fondo */
+.site-header.scrolled .nav-menu a {
+  color: #fff; /* antes: var(--brand-blue) */
+  background: transparent;
+}
+
+.site-header.scrolled .nav-menu a:hover {
+  color: #fff; /* antes: var(--brand-blue) */
+  background: transparent;
 }
 
 .nav {
@@ -953,6 +990,17 @@ body {
 .nav-menu a:hover {
   color: rgba(255, 255, 255, 0.815);
   background: rgba(6, 73, 167, 0.05);
+}
+
+/* Al salir del hero: links celestes y sin fondo */
+.site-header.scrolled .nav-menu a {
+  color: #fff; /* antes: var(--brand-blue) */
+  background: transparent;
+}
+
+.site-header.scrolled .nav-menu a:hover {
+  color: #fff; /* antes: var(--brand-blue) */
+  background: transparent;
 }
 
 .header-actions {
@@ -1252,17 +1300,17 @@ body {
   }
   
   .clients-grid.international {
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 80%), 1fr));
-    max-width: min(400px, 90%);
+    grid-template-columns: 1fr;
+    max-width: min(250px, 85%);
   }
   
   .client-logo {
-    padding: clamp(1rem, 3vw, 1.5rem);
-    min-height: clamp(100px, 20vw, 120px);
+    padding: clamp(0.75rem, 3vw, 1rem);
+    min-height: clamp(80px, 18vw, 100px);
   }
   
   .client-logo img {
-    max-height: clamp(60px, 15vw, 80px);
+    max-height: clamp(50px, 12vw, 70px);
   }
 
   /* Footer móvil */

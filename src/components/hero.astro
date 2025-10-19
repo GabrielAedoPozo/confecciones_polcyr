@@ -303,65 +303,21 @@ import "../styles/style.css";
 </section>
 
 <script is:inline>
-	// Solo funciones necesarias - sin slider
-	
-	// Mini galería de imágenes para la sección sobre nosotros
-	function initAboutGallery() {
-		const dots = document.querySelectorAll('.gallery-dot');
-		const images = document.querySelectorAll('.gallery-img');
-		
-		if (dots.length === 0 || images.length === 0) return;
-		
-		dots.forEach((dot, index) => {
-			dot.addEventListener('click', () => {
-				dots.forEach(d => d.classList.remove('active'));
-				images.forEach(img => img.classList.remove('active'));
-				
-				dot.classList.add('active');
-				images[index].classList.add('active');
-			});
-		});
-		
-		// Auto-cambio cada 4 segundos
-		let currentIndex = 0;
-		setInterval(() => {
-			dots.forEach(d => d.classList.remove('active'));
-			images.forEach(img => img.classList.remove('active'));
-			
-			currentIndex = (currentIndex + 1) % images.length;
-			dots[currentIndex].classList.add('active');
-			images[currentIndex].classList.add('active');
-		}, 4000);
-	}
+  const header = document.querySelector('.site-header');
+  const heroBanner = document.querySelector('.hero-banner'); // usar solo el banner inicial
 
-	// Traductor para el hero
-	function translateHero() {
-		const language = localStorage.getItem('language') || 'es';
-		
-		document.querySelectorAll('[data-es]').forEach(element => {
-			const esText = element.getAttribute('data-es');
-			const enText = element.getAttribute('data-en');
-			
-			if (language === 'es' && esText) {
-				element.textContent = esText;
-			} else if (language === 'en' && enText) {
-				element.textContent = enText;
-			}
-		});
-	}
+  const updateHeader = () => {
+    if (!header || !heroBanner) return;
+    const threshold = heroBanner.offsetHeight - header.offsetHeight;
+    if (window.scrollY > threshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
 
-	// Escuchar cambios de idioma
-	window.addEventListener('languageChanged', translateHero);
-
-	// Inicializar funciones simples
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', () => {
-			initAboutGallery();
-			translateHero();
-		});
-	} else {
-		initAboutGallery();
-		translateHero();
-	}
+  window.addEventListener('load', updateHeader, { once: true });
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  window.addEventListener('resize', updateHeader, { passive: true });
+  updateHeader();
 </script>
-
