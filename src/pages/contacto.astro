@@ -8,14 +8,14 @@ import "../styles/style.css";
 <Layout title="Contacto - Confecciones POLCYR">
 	<Header />
 	
-	<main class="contact-page">
-		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/tendedora2.webp'); --page-header-overlay:0.85">
-			<div class="page-header__inner">
-				<h1 class="page-header__title" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h1>
-				<p class="page-header__subtitle" data-es="Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos." data-en="We are here to help you with your textile projects. Contact us and discover how we can work together.">Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos.</p>
-			</div>
-		</header>
+	<header class="page-header contact-hero-header">
+		<div class="page-header__inner">
+			<h1 class="page-header__title" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h1>
+			<p class="page-header__subtitle" data-es="Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos." data-en="We are here to help you with your textile projects. Contact us and discover how we can work together.">Estamos aquí para ayudarte con tus proyectos textiles. Contáctanos y descubre cómo podemos trabajar juntos.</p>
+		</div>
+	</header>
 
+	<main class="contact-page">
 		<!-- Contact Information & Form -->
 		<section class="contact-content">
 			<div class="container">
@@ -189,8 +189,36 @@ import "../styles/style.css";
 		--error: #ef4444;
 	}
 
+	.contact-hero-header {
+		height: 100vh;
+		max-height: none;
+		background-image: url('/confecciones_polcyr/img/tendedora2.webp');
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		text-align: left;
+		border-radius: 0;
+	}
+
+	.contact-hero-header .page-header__inner {
+		padding: 0 2rem;
+		margin-left: clamp(2rem, 5vw, 4rem);
+		max-width: 800px;
+	}
+
+	.contact-hero-header .page-header__title {
+		font-size: clamp(3rem, 8vw, 5rem);
+		text-transform: uppercase;
+	}
+
+	.contact-hero-header .page-header__subtitle {
+		font-size: clamp(1.2rem, 4vw, 1.8rem);
+	}
+
 	.contact-page {
-		margin-top: 80px;
+		/* margin-top: 80px; */ /* Eliminado */
 	}
 
 	.container {
@@ -245,6 +273,7 @@ import "../styles/style.css";
 	/* Contact Content */
 	.contact-content {
 		padding: 5rem 0;
+		padding-top: 100px; /* Añadido para compensar el header fijo */
 	}
 
 	.contact-grid {
@@ -510,6 +539,14 @@ import "../styles/style.css";
 
 	/* Responsive */
 	@media (max-width: 768px) {
+		.contact-hero-header {
+			justify-content: center;
+		}
+		.contact-hero-header .page-header__inner {
+			margin-left: 0;
+			text-align: center;
+		}
+
 		.contact-grid {
 			grid-template-columns: 1fr;
 			gap: 3rem;
