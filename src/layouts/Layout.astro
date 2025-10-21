@@ -22,6 +22,27 @@ import '@fontsource/onest/800.css';
 	</body>
 </html>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const scrollThreshold = 100; // Cambia el header después de 100px de scroll
+
+    const updateHeader = () => {
+      if (window.scrollY > scrollThreshold) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    window.addEventListener('resize', updateHeader, { passive: true });
+    updateHeader(); // Ejecutar al cargar la página
+  });
+</script>
+
 <style is:global>
 
 	html{

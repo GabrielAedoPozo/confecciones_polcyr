@@ -8,14 +8,13 @@ import "../styles/style.css";
 <Layout title="Sobre Nosotros - Confecciones POLCYR">
 	<Header />
 	
-	<main class="about-page">
-		<header class="page-header page-header--lg" style="--page-header-image:url('/confecciones_polcyr/img/nosotros.jpg'); --page-header-overlay:0.9">
-			<div class="page-header__inner">
-				<h1 class="page-header__title" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</h1>
-				<p class="page-header__subtitle" data-es="Más de 20 años fabricando prendas textiles de alta calidad" data-en="Over 20 years manufacturing high-quality textile garments">Más de 20 años fabricando prendas textiles de alta calidad</p>
-			</div>
-		</header>
+	<header class="page-header about-hero-header">
+		<div class="page-header__inner">
+			<h1 class="page-header__title">MÁS SOBRE NOSOTROS</h1>
+		</div>
+	</header>
 
+	<main class="about-page">
 		<section class="who-we-are">
 			<div class="container">
 				<div class="content-grid">
@@ -175,8 +174,35 @@ import "../styles/style.css";
 </Layout>
 
 <style>
+	.about-hero-header {
+		height: 100vh;
+		max-height: none;
+		background-image: url('/confecciones_polcyr/img/nosotros.jpg');
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		text-align: left;
+		border-radius: 0;
+	}
 
+	.about-hero-header::before,
+	.about-hero-header::after {
+		background: rgba(0, 0, 0, 0.4); /* Overlay oscuro para legibilidad */
+	}
 
+	.about-hero-header .page-header__inner {
+		padding: 0 2rem;
+		margin-left: clamp(2rem, 5vw, 4rem);
+		max-width: 800px;
+	}
+
+	.about-hero-header .page-header__title {
+		font-size: clamp(3rem, 8vw, 5rem);
+		text-transform: uppercase;
+		color: white;
+	}
 
 	:root {
 		--brand-blue: #0649a7;
@@ -189,7 +215,7 @@ import "../styles/style.css";
 	}
 
 	.about-page {
-		margin-top: 80px;
+		/* margin-top: 80px; */ /* Eliminado para que el hero ocupe toda la pantalla */
 	}
 
 	/* Hero Section */
@@ -245,6 +271,7 @@ import "../styles/style.css";
 	/* Who We Are */
 	.who-we-are {
 		padding: 5rem 0;
+		padding-top: 160px; /* Añadido para compensar el header fijo */
 		position: relative;
 		background: linear-gradient(180deg, #fff, var(--bg-light));
 	}

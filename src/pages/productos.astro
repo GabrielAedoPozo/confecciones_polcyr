@@ -1,0 +1,126 @@
+---
+import "../styles/style.css";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout>
+    <Header />
+    
+    <!-- Hero Banner -->
+    <header class="productos-hero">
+        <div class="productos-hero__content">
+            <h1>PRODUCTOS</h1>
+            <p>DISEÑOS QUE REFLEJAN COMPROMISO Y PERFECCIÓN</p>
+        </div>
+    </header>
+
+    <!-- Sección Principal de Productos -->
+    <main class="productos-section">
+        <div class="section-header">
+            <h2>Nuestras Colecciones</h2>
+            <p>Amplia variedad de prendas textiles de alta calidad para todo tipo de necesidades</p>
+        </div>
+
+        <div class="productos-grid">
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/polos.webp" alt="Polos Premium" />
+                    <span class="producto-badge">Popular</span>
+                </div>
+                <div class="producto-content">
+                    <h3>POLOS PREMIUM</h3>
+                    <p>Confeccionados con algodón Pima 100% de la más alta calidad. Perfectos para uso corporativo y casual.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Algodón Pima peruano</li>
+                        <li>✓ Cuello redondo y camisero</li>
+                        <li>✓ Disponible en 15+ colores</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/poleras.webp" alt="Poleras Deportivas" />
+                    <span class="producto-badge">Tendencia</span>
+                </div>
+                <div class="producto-content">
+                    <h3>POLERAS DEPORTIVAS</h3>
+                    <p>Diseños modernos en tejido French Terry y algodón afelpado, ideales para gimnasio y actividades deportivas.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Tejido French Terry</li>
+                        <li>✓ Transpirable y cómodo</li>
+                        <li>✓ Lavable a máquina</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/shorts.webp" alt="Shorts y Bermudas" />
+                </div>
+                <div class="producto-content">
+                    <h3>SHORTS & BERMUDAS</h3>
+                    <p>Prendas deportivas y casuales con telas frescas y resistentes, diseñadas para máximo confort y movilidad.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Tela resistente</li>
+                        <li>✓ Bolsillos funcionales</li>
+                        <li>✓ Cintura ajustable</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/corporativo.webp" alt="Línea Corporativa" />
+                    <span class="producto-badge">Premium</span>
+                </div>
+                <div class="producto-content">
+                    <h3>LÍNEA CORPORATIVA</h3>
+                    <p>Uniformes y prendas personalizadas para empresas, con bordados y estampados de alta calidad profesional.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Personalización incluida</li>
+                        <li>✓ Bordados de precisión</li>
+                        <li>✓ Órdenes en volumen</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/camisetas.webp" alt="Camisetas Básicas" />
+                </div>
+                <div class="producto-content">
+                    <h3>CAMISETAS BÁSICAS</h3>
+                    <p>Camisetas versátiles de algodón de alta densidad, ideales para uso diario, eventos y merchandising.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Cuello redondo</li>
+                        <li>✓ Resistente al lavado</li>
+                        <li>✓ Aptos para estampado</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <div class="producto-image">
+                    <img src="/confecciones_polcyr/img/sudaderas.webp" alt="Sudaderas Premium" />
+                    <span class="producto-badge">Exclusiva</span>
+                </div>
+                <div class="producto-content">
+                    <h3>SUDADERAS PREMIUM</h3>
+                    <p>Sudaderas de calidad superior con capucha, perfectas para invierno con máxima calidez y durabilidad.</p>
+                    <ul class="producto-specs">
+                        <li>✓ Con capucha ajustable</li>
+                        <li>✓ Bolsillos frontales</li>
+                        <li>✓ Cordones de algodón</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+
+
+
+    <Footer />
+</Layout>

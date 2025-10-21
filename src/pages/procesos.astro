@@ -8,14 +8,13 @@ import "../styles/style.css";
 <Layout title="Procesos - Confecciones POLCYR">
 	<Header />
 
-	<main class="processes-page">
-		<header class="page-header" style="--page-header-image:url('/confecciones_polcyr/img/p4.png')">
-			<div class="page-header__inner">
-				<h1 class="page-header__title" data-es="Nuestros Procesos" data-en="Our Processes">Nuestros Procesos</h1>
-				<p class="page-header__subtitle" data-es="Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda." data-en="Learn about each stage of our production process, designed to ensure quality and precision in every garment.">Conoce cada etapa de nuestro proceso productivo, diseñado para asegurar calidad y precisión en cada prenda.</p>
-			</div>
-		</header>
+	<header class="page-header procesos-hero-header">
+		<div class="page-header__inner">
+			<h1 class="page-header__title" data-es="Nuestros Procesos" data-en="Our Processes">Nuestros Procesos</h1>
+		</div>
+	</header>
 
+	<main class="processes-page">
 		<section class="timeline-section">
 			<div class="container">
 				<div class="section-intro">
@@ -151,8 +150,40 @@ import "../styles/style.css";
 </Layout>
 
 <style is:global>
+	/* Estilos para el hero de 100vh */
+	.procesos-hero-header {
+		height: 100vh !important;
+		max-height: none !important;
+		border-radius: 0 !important;
+		justify-content: flex-start !important;
+		text-align: left !important;
+		background-image: url('/confecciones_polcyr/img/p4.png') !important;
+		background-size: cover !important;
+		background-position: center !important;
+	}
+
+	.procesos-hero-header::before,
+	.procesos-hero-header::after {
+		background: rgba(0, 0, 0, 0.4) !important; /* Overlay oscuro para legibilidad */
+	}
+
+	.procesos-hero-header .page-header__inner {
+		padding: 0 2rem !important;
+		margin-left: clamp(2rem, 5vw, 4rem) !important;
+		max-width: 800px !important;
+	}
+
+	.procesos-hero-header .page-header__title {
+		font-size: clamp(3rem, 8vw, 5rem) !important;
+		text-transform: uppercase !important;
+	}
+
+	.procesos-hero-header .page-header__subtitle {
+		display: none;
+	}
+
 	/* HARD RESET: forzar estilos de proceso con !important si es necesario */
-	.processes-page { margin-top: 80px !important; }
+	.processes-page { margin-top: 0 !important; } /* Eliminado el margen superior */
 	.processes-page .container { max-width: 960px !important; margin: 0 auto !important; padding: 0 2rem !important; } /* reducir de 1200px a 960px */
 
 	/* Header mejorado con overlay más claro */
@@ -179,6 +210,7 @@ import "../styles/style.css";
 
 	.processes-page .timeline-section { 
 		padding: 5rem 0 !important; 
+		/* padding-top: 160px !important; */ /* Eliminado para que no haya espacio extra */
 		background: linear-gradient(180deg, #fff, #f8fafc) !important;
 		position: relative !important;
 	}

@@ -301,23 +301,3 @@ import "../styles/style.css";
     </div>
   </section>
 </section>
-
-<script is:inline>
-  const header = document.querySelector('.site-header');
-  const heroBanner = document.querySelector('.hero-banner'); // usar solo el banner inicial
-
-  const updateHeader = () => {
-    if (!header || !heroBanner) return;
-    const threshold = heroBanner.offsetHeight - header.offsetHeight;
-    if (window.scrollY > threshold) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('load', updateHeader, { once: true });
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  window.addEventListener('resize', updateHeader, { passive: true });
-  updateHeader();
-</script>
