@@ -2011,3 +2011,38 @@ body {
   --page-header-image: url('/confecciones_polcyr/img/tendedora2.webp');
   --page-header-overlay: 0.85;
 }
+
+/* Hero slideshow (crossfade) */
+.hero-banner { position: relative; } /* ya existe, se reafirma por claridad */
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* debajo del overlay (::before) y del contenido */
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  animation: heroSlide 16s infinite;
+  will-change: opacity;
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 4s; }
+.hero-slide:nth-child(3) { animation-delay: 8s; }
+.hero-slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes heroSlide {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }   /* fade in */
+  30%  { opacity: 1; }   /* visible ~4s en 16s */
+  35%  { opacity: 0; }   /* fade out */
+  100% { opacity: 0; }
+}
+
+/* Respeto a usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { animation: none; opacity: 0; }
+  .hero-slide:nth-child(1) { opacity: 1; }
+}
