@@ -1119,7 +1119,7 @@ body {
   padding: 0;
   display: flex;
   align-items: center;
-  background: url('/confecciones_polcyr/img/productos.webp') no-repeat center center;
+  background: url('/confecciones_polcyr/img/productos.png') no-repeat center center;
   background-size: cover;
   left: 50%;
   right: 50%;
@@ -2004,11 +2004,10 @@ body {
   --page-header-overlay: 0.85;
 }
 .processes-page .page-header {
-  --page-header-image: url('/confecciones_polcyr/img/p2.jpg');
+  --page-header-image: url('/confecciones_polcyr/img/procesos.png');
   --page-header-overlay: 0.85;
 }
 .contact-page .page-header {
-  --page-header-image: url('/confecciones_polcyr/img/tendedora2.webp');
   --page-header-overlay: 0.85;
 }
 
@@ -2045,4 +2044,18 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-slide { animation: none; opacity: 0; }
   .hero-slide:nth-child(1) { opacity: 1; }
+}
+
+/* Forzar imagen de Procesos (override fuerte y amplio) */
+body.processes-page .page-header,
+body.procesos-page .page-header,
+.page-header.processes-page,
+.page-header.procesos-page {
+  --page-header-image: url('/confecciones_polcyr/img/procesos.png') !important;
+  background: url('/confecciones_polcyr/img/procesos.png') no-repeat center center / cover !important;
+}
+
+.procesos-hero,
+.processes-hero {
+  background: url('/confecciones_polcyr/img/procesos.png') no-repeat center center / cover !important;
 }
