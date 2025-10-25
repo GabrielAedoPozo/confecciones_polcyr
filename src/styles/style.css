@@ -2040,22 +2040,50 @@ body {
   100% { opacity: 0; }
 }
 
-/* Respeto a usuarios con reducción de movimiento */
+/* Captions sincronizados con el slideshow */
+.hero-captions {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* alineado a la izquierda por defecto */
+  z-index: 3; /* sobre overlays */
+  pointer-events: none;
+}
+
+.hero-caption {
+  position: absolute; /* superpuestos entre sí */
+  max-width: 800px;
+  padding: 0 2rem;
+  margin-left: clamp(2rem, 5vw, 4rem);
+  color: #fff;
+  opacity: 0;
+  animation: heroCaption 16s linear infinite; /* antes: heroSlide 16s infinite */
+}
+
+/* Delays para cada caption (coinciden con los slides) */
+.hero-caption:nth-child(1) { animation-delay: 0s; }
+.hero-caption:nth-child(2) { animation-delay: 4s; }
+.hero-caption:nth-child(3) { animation-delay: 8s; }
+.hero-caption:nth-child(4) { animation-delay: 12s; }
+
+/* Keyframes de captions: desaparecen antes del siguiente slide */
+@keyframes heroCaption {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }   /* aparece un poco después del inicio */
+  22%  { opacity: 1; }   /* visible menos tiempo que la imagen */
+  24%  { opacity: 0; }   /* se oculta antes del cambio de imagen siguiente */
+  100% { opacity: 0; }
+}
+
+/* Responsive: centrar en móvil como el texto previo */
+@media (max-width: 768px) {
+  .hero-captions { justify-content: center; }
+  .hero-caption { margin-left: 0; text-align: center; }
+}
+
+/* Reduce motion: mostrar solo el primer caption */
 @media (prefers-reduced-motion: reduce) {
-  .hero-slide { animation: none; opacity: 0; }
-  .hero-slide:nth-child(1) { opacity: 1; }
-}
-
-/* Forzar imagen de Procesos (override fuerte y amplio) */
-body.processes-page .page-header,
-body.procesos-page .page-header,
-.page-header.processes-page,
-.page-header.procesos-page {
-  --page-header-image: url('/confecciones_polcyr/img/procesos.png') !important;
-  background: url('/confecciones_polcyr/img/procesos.png') no-repeat center center / cover !important;
-}
-
-.procesos-hero,
-.processes-hero {
-  background: url('/confecciones_polcyr/img/procesos.png') no-repeat center center / cover !important;
+  .hero-caption { animation: none; opacity: 0; }
+  .hero-caption:nth-child(1) { opacity: 1; }
 }
