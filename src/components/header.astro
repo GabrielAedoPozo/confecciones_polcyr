@@ -99,39 +99,41 @@
 		const menuToggle = document.querySelector('.menu-toggle');
 		const navMenu = document.getElementById('navMenu');
 		
-		if (!menuToggle || !navMenu) {
+		if (!(menuToggle instanceof HTMLElement) || !(navMenu instanceof HTMLElement)) {
 			console.log('Elementos del menú no encontrados');
 			return;
 		}
+		const navMenuEl = navMenu;
 		
 		// Crear overlay
 		let overlay = document.querySelector('.menu-overlay');
-		if (!overlay) {
+		if (!(overlay instanceof HTMLDivElement)) {
 			overlay = document.createElement('div');
 			overlay.className = 'menu-overlay';
 			document.body.appendChild(overlay);
 		}
+		const overlayEl = /** @type {HTMLDivElement} */ (overlay);
 		
 		function openMenu() {
 			console.log('Abriendo menú');
-			navMenu.classList.add('active');
-			overlay.classList.add('active');
+			navMenuEl.classList.add('active');
+			overlayEl.classList.add('active');
 			document.body.style.overflow = 'hidden';
 		}
 		
 		function closeMenu() {
 			console.log('Cerrando menú');
-			navMenu.classList.remove('active');
-			overlay.classList.remove('active');
+			navMenuEl.classList.remove('active');
+			overlayEl.classList.remove('active');
 			document.body.style.overflow = '';
 		}
 		
 		// Toggle menu
 		menuToggle.addEventListener('click', function(e) {
 			e.preventDefault();
-			console.log('Click en toggle - Menu activo:', navMenu.classList.contains('active'));
+			console.log('Click en toggle - Menu activo:', navMenuEl.classList.contains('active'));
 			
-			if (navMenu.classList.contains('active')) {
+			if (navMenuEl.classList.contains('active')) {
 				closeMenu();
 			} else {
 				openMenu();
@@ -142,13 +144,13 @@
 		overlay.addEventListener('click', closeMenu);
 		
 		// Cerrar con links
-		navMenu.querySelectorAll('a').forEach(function(link) {
+		navMenuEl.querySelectorAll('a').forEach(function(link) {
 			link.addEventListener('click', closeMenu);
 		});
 		
 		// Cerrar con Escape
 		document.addEventListener('keydown', function(e) {
-			if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+			if (e.key === 'Escape' && navMenuEl.classList.contains('active')) {
 				closeMenu();
 			}
 		});
@@ -165,6 +167,9 @@
 
 	// Sistema de traducción
 	class LanguageManager {
+		/** @type {'es' | 'en'} */
+		currentLanguage;
+
 		constructor() {
 			this.currentLanguage = localStorage.getItem('language') || 'es';
 			this.init();
@@ -209,6 +214,8 @@
 		}
 
 		translatePage() {
+			document.documentElement.lang = this.currentLanguage;
+
 			document.querySelectorAll('[data-es]').forEach(element => {
 				const esText = element.getAttribute('data-es');
 				const enText = element.getAttribute('data-en');
@@ -229,5 +236,6 @@
 		initMobileMenu();
 	});
 
-	window.LanguageManager = LanguageManager;
+	const win = /** @type {any} */ (window);
+	win.LanguageManager = LanguageManager;
 </script>
