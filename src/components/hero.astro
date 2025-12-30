@@ -38,292 +38,137 @@ import "../styles/style.css";
     </div>
   </div>
 
-  <!-- Sección Sobre Nosotros integrada en el hero -->
-  <section class="about-us" id="nosotros">
-    <section class="about-container">
-      <div class="about-images">
-        <div class="image-gallery">
-          <img src="/confecciones_polcyr/img/nosotros.webp" alt="Equipo Polcyr Confecciones" class="gallery-img active" />
-          <img src="/confecciones_polcyr/img/nosotros2.webp" alt="Instalaciones Polcyr" class="gallery-img" />
-          <img src="/confecciones_polcyr/img/nosotros3.webp" alt="Proceso de producción" class="gallery-img" />
-        </div>
-        <div class="gallery-dots">
-          <button class="gallery-dot active" data-index="0"></button>
-          <button class="gallery-dot" data-index="1"></button>
-          <button class="gallery-dot" data-index="2"></button>
-        </div>
+  <!-- Tarjeta destacada debajo del inicio -->
+  <div class="inicio-highlight" aria-label="Destacado">
+    <div class="inicio-highlight__card">
+      <div class="inicio-highlight__media" aria-hidden="true">
+        <img
+          class="inicio-highlight__img"
+          src="/confecciones_polcyr/img/delantal.webp"
+          alt="Delantal de confección"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      
-      <div class="about-content">
-        <h2 data-es="Sobre nosotros" data-en="About Us">Sobre nosotros</h2>
-        <h3 data-es="Más de 20 años fabricando prendas textiles de alta calidad" data-en="More than 20 years manufacturing high-quality textile garments">Más de 20 años fabricando prendas textiles de alta calidad</h3>
-        <p data-es="Confecciones POLCYR S.R.L. es una empresa peruana especializada en la fabricación y exportación de prendas textiles. Nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima, reconocido mundialmente por su suavidad y resistencia." data-en="Confecciones POLCYR S.R.L. is a Peruvian company specialized in the manufacture and export of textile garments. We specialize in polo shirts, t-shirts, shorts and personalized garments, made with the best Peruvian cotton, especially Pima cotton, recognized worldwide for its softness and resistance.">Confecciones POLCYR S.R.L. es una empresa peruana especializada en la fabricación y exportación de prendas textiles. Nos especializamos en polos, poleras, shorts y prendas personalizadas, elaboradas con los mejores algodones peruanos, especialmente el algodón Pima, reconocido mundialmente por su suavidad y resistencia.</p>
-        
-        <div class="stats">
-          <div class="stat-item">
-            <span class="stat-number">200,000+</span>
-            <span class="stat-label" data-es="Prendas confeccionadas al mes" data-en="Garments manufactured per month">Prendas confeccionadas al mes</span>
-          </div>
-        </div>
-        
-        <div class="features">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
-              </svg>
-            </div>
-            <span data-es="Procesos productivos sostenibles" data-en="Sustainable production processes">Procesos productivos sostenibles</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <span data-es="Flexibilidad en volúmenes y tiempos" data-en="Flexibility in volumes and times">Flexibilidad en volúmenes y tiempos</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </div>
-            <span data-es="Algodón Pima peruano" data-en="Peruvian Pima cotton">Algodón Pima peruano</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-            </div>
-            <span data-es="Control de calidad integral" data-en="Comprehensive quality control">Control de calidad integral</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01 1l-2.54 3.4c-.28.37-.28.85 0 1.22L14 16.5V22h2v-3.5h2V22h2zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2 16v-7H9V9.5c0-.28-.22-.5-.5-.5H3c-.28 0-.5.22-.5.5V15H4v7h3.5z"/>
-              </svg>
-            </div>
-            <span data-es="Atención personalizada" data-en="Personalized attention">Atención personalizada</span>
-          </div>
-        </div>
-        
-        <div class="features">
 
-        <a href="/confecciones_polcyr/nosotros" class="cta-button" data-es="Más sobre nosotros" data-en="Learn more about us">Más sobre nosotros</a>
-      </div>
-    </div>
-  </section>
+      <div class="inicio-highlight__content">
+        <h2 class="inicio-highlight__title">Producción textil lista para tu marca</h2>
+        <p class="inicio-highlight__desc">
+          Confeccionamos prendas y accesorios con acabados consistentes, control de calidad y tiempos de entrega claros.
+          Trabajamos pedidos por lote y brindamos soporte desde la muestra hasta la producción.
+        </p>
 
-  <!-- Sección Nuestra Tecnología -->
-  <section class="technology-section" id="tecnologia">
-    <div class="technology-container">
-      <div class="section-header">
-        <h2 data-es="Nuestra Tecnología" data-en="Our Technology">Nuestra Tecnología</h2>
-        <p data-es="Equipos de última generación para garantizar la máxima calidad en cada proceso productivo" data-en="State-of-the-art equipment to guarantee maximum quality in each production process">Equipos de última generación para garantizar la máxima calidad en cada proceso productivo</p>
-      </div>
-      
-      <div class="technology-grid">
-        <div class="tech-card">
-          <div class="tech-image">
-            <img src="/confecciones_polcyr/img/p1.jpg" alt="Tejedora Industrial" />
-            <div class="tech-overlay">
-              <div class="tech-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="tech-content">
-            <h3 data-es="Tejedora Industrial" data-en="Industrial Weaving Machine">Tejedora Industrial</h3>
-            <p data-es="Tecnología avanzada de tejido que permite crear tejidos uniformes y resistentes con diferentes tipos de fibras y patrones complejos." data-en="Advanced weaving technology that allows creating uniform and resistant fabrics with different types of fibers and complex patterns.">Tecnología avanzada de tejido que permite crear tejidos uniformes y resistentes con diferentes tipos de fibras y patrones complejos.</p>
-            <ul class="tech-features">
-              <li data-es="Alta velocidad de producción" data-en="High production speed">Alta velocidad de producción</li>
-              <li data-es="Control de calidad automático" data-en="Automatic quality control">Control de calidad automático</li>
-              <li data-es="Versatilidad en tipos de tejido" data-en="Versatility in fabric types">Versatilidad en tipos de tejido</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-image">
-            <img src="/confecciones_polcyr/img/p2.jpg" alt="Estampadora Digital" />
-            <div class="tech-overlay">
-              <div class="tech-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="tech-content">
-            <h3 data-es="Estampadora Digital" data-en="Digital Printing Machine">Estampadora Digital</h3>
-            <p data-es="Equipos de estampado digital de última generación que garantizan colores vibrantes y diseños precisos en cada prenda." data-en="State-of-the-art digital printing equipment that guarantees vibrant colors and precise designs on every garment.">Equipos de estampado digital de última generación que garantizan colores vibrantes y diseños precisos en cada prenda.</p>
-            <ul class="tech-features">
-              <li data-es="Impresión de alta resolución" data-en="High resolution printing">Impresión de alta resolución</li>
-              <li data-es="Colores duraderos y brillantes" data-en="Durable and bright colors">Colores duraderos y brillantes</li>
-              <li data-es="Diseños personalizados" data-en="Custom designs">Diseños personalizados</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-image">
-            <img src="/confecciones_polcyr/img/p3.jpg" alt="Horno de Secado" />
-            <div class="tech-overlay">
-              <div class="tech-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              </div>
-            </div>
-          </div>
-          <div class="tech-content">
-            <h3 data-es="Horno de Secado" data-en="Drying Oven">Horno de Secado</h3>
-            <p data-es="Sistema de secado controlado que asegura el curado perfecto de tintes y acabados, manteniendo la integridad de las fibras." data-en="Controlled drying system that ensures perfect curing of dyes and finishes, maintaining fiber integrity.">Sistema de secado controlado que asegura el curado perfecto de tintes y acabados, manteniendo la integridad de las fibras.</p>
-            <ul class="tech-features">
-              <li data-es="Control de temperatura preciso" data-en="Precise temperature control">Control de temperatura preciso</li>
-              <li data-es="Secado uniforme y eficiente" data-en="Uniform and efficient drying">Secado uniforme y eficiente</li>
-              <li data-es="Conservación de propiedades textiles" data-en="Preservation of textile properties">Conservación de propiedades textiles</li>
-            </ul>
-          </div>
+        <div class="inicio-highlight__actions">
+          <a class="inicio-highlight__btn inicio-highlight__btn--solid" href="/confecciones_polcyr/contacto">Cotizar ahora</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Sección Por qué POLCYR -->
-  <section class="why-polcyr-section" id="porque">
-    <div class="why-polcyr-container">
-      <div class="section-header">
-        <h2 data-es="¿Por qué Confecciones POLCYR?" data-en="Why Confecciones POLCYR?">¿Por qué Confecciones POLCYR?</h2>
-        <p data-es="Garantizamos calidad, sostenibilidad y cumplimiento en cada proyecto textil que desarrollamos." data-en="We guarantee quality, sustainability and compliance in every textile project we develop.">Garantizamos calidad, sostenibilidad y cumplimiento en cada proyecto textil que desarrollamos.</p>
+  <!-- Tarjeta destacada industrial (imagen a la derecha) -->
+  <div class="inicio-highlight" aria-label="Industrial">
+    <div class="inicio-highlight__card inicio-highlight__card--reverse">
+      <div class="inicio-highlight__content inicio-highlight__content--right">
+        <h2 class="inicio-highlight__title">Uniformes y confección para uso industrial</h2>
+        <p class="inicio-highlight__desc">
+          Diseñamos y producimos prendas resistentes para trabajo diario: telas durables, costuras reforzadas y tallaje consistente.
+          Ideal para empresas que necesitan reposición rápida y una imagen uniforme.
+        </p>
+
+        <div class="inicio-highlight__actions inicio-highlight__actions--end">
+          <a class="inicio-highlight__btn inicio-highlight__btn--solid" href="/confecciones_polcyr/contacto">Solicitar propuesta</a>
+        </div>
       </div>
-      
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-            </svg>
-          </div>
-          <h3 data-es="Procesos sostenibles" data-en="Sustainable processes">Procesos sostenibles</h3>
-          <p data-es="Procesos productivos sostenibles y control de calidad integral en cada etapa." data-en="Sustainable production processes and comprehensive quality control at each stage.">Procesos productivos sostenibles y control de calidad integral en cada etapa.</p>
-        </div>
 
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <h3 data-es="Flexibilidad productiva" data-en="Production flexibility">Flexibilidad productiva</h3>
-          <p data-es="Flexibilidad en volúmenes y tiempos de entrega adaptados a sus necesidades." data-en="Flexibility in volumes and delivery times adapted to your needs.">Flexibilidad en volúmenes y tiempos de entrega adaptados a sus necesidades.</p>
-        </div>
+      <div class="inicio-highlight__media" aria-hidden="true">
+        <img
+          class="inicio-highlight__img inicio-highlight__img--right"
+          src="/confecciones_polcyr/img/industrial.png"
+          alt="Confección industrial"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
 
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-            </svg>
-          </div>
-          <h3 data-es="Cumplimiento garantizado" data-en="Guaranteed compliance">Cumplimiento garantizado</h3>
-          <p data-es="Estricto cumplimiento de compromisos logísticos y comerciales." data-en="Strict compliance with logistic and commercial commitments.">Estricto cumplimiento de compromisos logísticos y comerciales.</p>
-        </div>
+  <!-- Tarjeta destacada gorra -->
+  <div class="inicio-highlight" aria-label="Gorra">
+    <div class="inicio-highlight__card">
+      <div class="inicio-highlight__media" aria-hidden="true">
+        <img
+          class="inicio-highlight__img"
+          src="/confecciones_polcyr/img/gorra.webp"
+          alt="Gorra"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-            </svg>
-          </div>
-          <h3 data-es="Atención personalizada" data-en="Personalized attention">Atención personalizada</h3>
-          <p data-es="Atención personalizada en cada etapa del proceso productivo y de exportación." data-en="Personalized attention at each stage of the production and export process.">Atención personalizada en cada etapa del proceso productivo y de exportación.</p>
-        </div>
+      <div class="inicio-highlight__content">
+        <h2 class="inicio-highlight__title">Accesorios con acabado premium</h2>
+        <p class="inicio-highlight__desc">
+          Gorras listas para personalizar con tu logo. Trabajamos materiales resistentes, costuras firmes y control de calidad por lote.
+        </p>
 
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-            </svg>
-          </div>
-          <h3 data-es="Experiencia internacional" data-en="International experience">Experiencia internacional</h3>
-          <p data-es="Más de 20 años de experiencia en mercados nacionales e internacionales." data-en="More than 20 years of experience in national and international markets.">Más de 20 años de experiencia en mercados nacionales e internacionales.</p>
-        </div>
-
-        <div class="why-card">
-          <div class="why-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zM4 19h16v2H4z"/>
-              <path d="m12 2l-8 6h16z"/>
-            </svg>
-          </div>
-          <h3 data-es="Algodón Pima premium" data-en="Premium Pima cotton">Algodón Pima premium</h3>
-          <p data-es="Utilizamos los mejores algodones peruanos, especialmente el algodón Pima." data-en="We use the best Peruvian cotton, especially Pima cotton.">Utilizamos los mejores algodones peruanos, especialmente el algodón Pima.</p>
+        <div class="inicio-highlight__actions">
+          <a class="inicio-highlight__btn inicio-highlight__btn--solid" href="/confecciones_polcyr/contacto">Cotizar</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Sección Clientes -->
-  <section class="clients-section" id="clientes">
-    <div class="clients-container">
-      <div class="section-header">
-        <h2 data-es="Nuestros Clientes" data-en="Our Clients">Nuestros Clientes</h2>
-        <p data-es="Trabajamos con marcas nacionales e internacionales que confían en nuestra calidad y experiencia" data-en="We work with national and international brands that trust our quality and experience">Trabajamos con marcas nacionales e internacionales que confían en nuestra calidad y experiencia</p>
-      </div>
-      
-      <!-- Clientes Nacionales -->
-      <div class="clients-category">
-        <h3 data-es="Clientes Nacionales" data-en="National Clients">Clientes Nacionales</h3>
-        <div class="clients-grid">
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional.png" alt="Cliente Nacional 1" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional2.png" alt="Cliente Nacional 2" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional3.png" alt="Cliente Nacional 3" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional4.png" alt="Cliente Nacional 4" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional5.png" alt="Cliente Nacional 5" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional6.png" alt="Cliente Nacional 6" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional7.png" alt="Cliente Nacional 7" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional8.png" alt="Cliente Nacional 8" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional9.png" alt="Cliente Nacional 9" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/nacional10.png" alt="Cliente Nacional 10" />
-          </div>
-        </div>
+  <!-- Tarjeta destacada mochila -->
+  <div class="inicio-highlight" aria-label="Mochila">
+    <div class="inicio-highlight__card">
+      <div class="inicio-highlight__media" aria-hidden="true">
+        <img
+          class="inicio-highlight__img"
+          src="/confecciones_polcyr/img/mochila.webp"
+          alt="Mochila"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
-      <!-- Clientes Internacionales -->
-      <div class="clients-category">
-        <h3 data-es="Clientes Internacionales" data-en="International Clients">Clientes Internacionales</h3>
-        <div class="clients-grid international">
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/extranjero.png" alt="Cliente Internacional 1" />
-          </div>
-          <div class="client-logo">
-            <img src="/confecciones_polcyr/img/extranjero2.png" alt="Cliente Internacional 2" />
-          </div>
+      <div class="inicio-highlight__content">
+        <h2 class="inicio-highlight__title">Mochilas pensadas para durar</h2>
+        <p class="inicio-highlight__desc">
+          Confección resistente para uso diario y corporativo. Refuerzos, cierres de calidad y terminaciones prolijas para tu marca.
+        </p>
+
+        <div class="inicio-highlight__actions">
+          <a class="inicio-highlight__btn inicio-highlight__btn--solid" href="/confecciones_polcyr/contacto">Solicitar propuesta</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Tarjeta destacada polera -->
+  <div class="inicio-highlight" aria-label="Polera">
+    <div class="inicio-highlight__card">
+      <div class="inicio-highlight__media" aria-hidden="true">
+        <img
+          class="inicio-highlight__img"
+          src="/confecciones_polcyr/img/polera.png"
+          alt="Polera"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <div class="inicio-highlight__content">
+        <h2 class="inicio-highlight__title">Poleras para merchandising y equipos</h2>
+        <p class="inicio-highlight__desc">
+          Producción por lote con tallaje consistente. Ideal para marcas, colegios y empresas que buscan uniformidad y buena caída.
+        </p>
+
+        <div class="inicio-highlight__actions">
+          <a class="inicio-highlight__btn inicio-highlight__btn--solid" href="/confecciones_polcyr/contacto">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
+
